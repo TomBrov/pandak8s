@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, Response
-from k8s_client import get_namespaces, get_deployments, get_pods, get_services
+from k8s_client import get_namespaces, get_deployments, get_pods, get_services, get_all_pods, get_all_deployments, get_all_services
 
 app = Flask(__name__)
 
@@ -13,17 +13,24 @@ def namespaces() -> Response:
 
 @app.route("/api/deployments", methods=["GET"])
 def deployments() -> Response:
-    namespace: str = request.args.get("namespace", "default")
+    namespace: str = request.args.get("namespace", "all")
+    if namespace == "all":
+        return jsonify(get_all_deployments())
     return jsonify(get_deployments(namespace))
 
-@app.route("/api/pods", methods=["GET"])
+@app.route("/api/pods")
 def pods() -> Response:
-    namespace: str = request.args.get("namespace", "default")
+    namespace = request.args.get("namespace", "all")
+    if namespace == "all":
+        return jsonify(get_all_pods())
     return jsonify(get_pods(namespace))
+
 
 @app.route("/api/services", methods=["GET"])
 def services() -> Response:
-    namespace: str = request.args.get("namespace", "default")
+    namespace: str = request.args.get("namespace", "all")
+    if namespace == "all":
+        return jsonify(get_all_services())
     return jsonify(get_services(namespace))
 
 if __name__ == "__main__":
