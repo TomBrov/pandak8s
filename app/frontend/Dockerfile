@@ -20,4 +20,4 @@ COPY ./nginx.conf /etc/nginx/templates/default.conf
 
 RUN apk add --no-cache gettext
 
-CMD envsubst '${BACKEND_HOST} ${BACKEND_PORT}' < /etc/nginx/templates/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+CMD envsubst '${BACKEND_HOST}' < /etc/nginx/templates/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'

@@ -86,35 +86,6 @@ const Layout = ({ children, showNamespaceSelector, onNamespaceChange, currentNam
 
       {/* Main content */}
       <div className="flex-1 flex flex-col">
-        {/* Top bar */}
-        {showNamespaceSelector && (
-          <div className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
-            <div></div>
-            <div className="flex items-center space-x-4">
-              {/* Namespace selector */}
-              <div className="flex items-center space-x-2">
-                <label className="text-sm font-medium text-gray-700">Namespace:</label>
-                <select
-                  value={currentNamespace || 'default'}
-                  onChange={(e) => onNamespaceChange?.(e.target.value)}
-                  className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-                >
-                  <option value="default">default</option>
-                  <option value="kube-system">kube-system</option>
-                  <option value="kube-public">kube-public</option>
-                  <option value="monitoring">monitoring</option>
-                  <option value="ingress-nginx">ingress-nginx</option>
-                </select>
-              </div>
-              
-              {/* Status indicator */}
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm text-gray-600">Connected</span>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Page content */}
         <div className="flex-1 p-6">

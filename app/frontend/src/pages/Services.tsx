@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Layout from '@/components/Layout';
+import NamespaceDropdown from '@/components/NamespaceDropdown';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Table,
@@ -23,7 +23,7 @@ const Services = () => {
   const { data: servicesData, isLoading, error, refetch } = useQuery({
     queryKey: ['services', namespace],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/services?namespace=${namespace}`);
+      const response = await fetch(`${API_BASE_URL}/services?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch services');
       return response.json();
     },
@@ -94,6 +94,10 @@ const Services = () => {
                 <div className="animate-spin h-4 w-4 border-2 border-purple-500 rounded-full border-t-transparent"></div>
               )}
             </CardTitle>
+            <NamespaceDropdown
+              selectedNamespace={namespace}
+              onNamespaceChange={setNamespace}
+            />
           </CardHeader>
           <CardContent>
             {error ? (
@@ -103,6 +107,10 @@ const Services = () => {
                 <Button onClick={() => refetch()} className="mt-4" variant="outline">
                   Try Again
                 </Button>
+              </div>
+            ) : servicesData && servicesData.length === 0 ? (
+              <div className="text-center py-8 text-gray-500">
+                ➤ No services found in the selected namespace.
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -133,8 +141,8 @@ const Services = () => {
                           </TableCell>
                         </TableRow>
                       ))
-                    ) : servicesData?.length > 0 ? (
-                      servicesData.map((service: any, index: number) => (
+                    ) : (
+                      servicesData?.map((service: any, index: number) => (
                         <TableRow key={index}>
                           <TableCell className="font-medium">
                             {service.name || service.metadata?.name || 'Unknown'}
@@ -152,12 +160,6 @@ const Services = () => {
                           </TableCell>
                         </TableRow>
                       ))
-                    ) : (
-                      <TableRow>
-                        <TableCell colSpan={4} className="text-center py-8 text-gray-500">
-                          No services found in {namespace} namespace
-                        </TableCell>
-                      </TableRow>
                     )}
                   </TableBody>
                 </Table>

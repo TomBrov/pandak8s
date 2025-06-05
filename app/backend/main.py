@@ -1,7 +1,23 @@
 from flask import Flask, jsonify, request, Response
-from k8s_client import get_namespaces, get_deployments, get_pods, get_services, get_all_pods, get_all_deployments, get_all_services
+from k8s_client import (
+    get_namespaces,
+    get_deployments,
+    get_pods,
+    get_services,
+    get_all_pods,
+    get_all_deployments,
+    get_all_services
+)
+from flask_cors import CORS
+from logger import get_logger
 
 app = Flask(__name__)
+logger = get_logger(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+@app.before_request
+def log_request():
+    logger.info(f"{request.method} {request.path} | args: {dict(request.args)}")
 
 @app.route("/api/health", methods=["GET"])
 def health() -> Response:
@@ -18,13 +34,12 @@ def deployments() -> Response:
         return jsonify(get_all_deployments())
     return jsonify(get_deployments(namespace))
 
-@app.route("/api/pods")
+@app.route("/api/pods", methods=["GET"])
 def pods() -> Response:
     namespace = request.args.get("namespace", "all")
     if namespace == "all":
         return jsonify(get_all_pods())
     return jsonify(get_pods(namespace))
-
 
 @app.route("/api/services", methods=["GET"])
 def services() -> Response:

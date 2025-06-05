@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Layout from '@/components/Layout';
+import NamespaceDropdown from '@/components/NamespaceDropdown';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Table,
@@ -16,13 +17,14 @@ import { Rocket, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { API_BASE_URL } from '../config';
 
+
 const Deployments = () => {
   const [namespace, setNamespace] = useState('default');
 
   const { data: deploymentsData, isLoading, error, refetch } = useQuery({
     queryKey: ['deployments', namespace],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/deployments?namespace=${namespace}`);
+      const response = await fetch(`${API_BASE_URL}/deployments?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch deployments');
       return response.json();
     },
@@ -79,6 +81,10 @@ const Deployments = () => {
                 <div className="animate-spin h-4 w-4 border-2 border-green-500 rounded-full border-t-transparent"></div>
               )}
             </CardTitle>
+            <NamespaceDropdown
+              selectedNamespace={namespace}
+              onNamespaceChange={setNamespace}
+            />
           </CardHeader>
           <CardContent>
             {error ? (
@@ -88,6 +94,10 @@ const Deployments = () => {
                 <Button onClick={() => refetch()} className="mt-4" variant="outline">
                   Try Again
                 </Button>
+              </div>
+            ) : deploymentsData && deploymentsData.length === 0 ? (
+              <div className="text-center py-8 text-gray-500">
+                ➤ No deployments found in the selected namespace.
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -122,8 +132,8 @@ const Deployments = () => {
                           </TableCell>
                         </TableRow>
                       ))
-                    ) : deploymentsData?.length > 0 ? (
-                      deploymentsData.map((deployment: any, index: number) => {
+                    ) : (
+                      deploymentsData?.map((deployment: any, index: number) => {
                         const desired = deployment.desired_replicas || deployment.spec?.replicas || 0;
                         const available = deployment.available_replicas || deployment.status?.availableReplicas || 0;
                         const health = getHealthStatus(desired, available);
@@ -150,12 +160,6 @@ const Deployments = () => {
                           </TableRow>
                         );
                       })
-                    ) : (
-                      <TableRow>
-                        <TableCell colSpan={5} className="text-center py-8 text-gray-500">
-                          No deployments found in {namespace} namespace
-                        </TableCell>
-                      </TableRow>
                     )}
                   </TableBody>
                 </Table>
