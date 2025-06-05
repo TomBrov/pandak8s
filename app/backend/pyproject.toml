@@ -5,6 +5,10 @@ description = "A Flask-based API to view Kubernetes Deployments, Pods, and Servi
 authors = ["TomBrov <tbrovy@gmail.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+app = "main:app"
+
+
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^3.0.0"
