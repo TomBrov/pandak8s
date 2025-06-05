@@ -11,20 +11,18 @@ def health() -> Response:
 def namespaces() -> Response:
     return jsonify(get_namespaces())
 
-@app.route("/api/deployments", methods=["GET"])
-def deployments() -> Response:
-    namespace: str = request.args.get("namespace", "default")
+@app.route("/api/deployments/<string:namespace>", methods=["GET"])
+def deployments(namespace: str) -> Response:
     return jsonify(get_deployments(namespace))
 
-@app.route("/api/pods", methods=["GET"])
-def pods() -> Response:
-    namespace: str = request.args.get("namespace", "default")
+@app.route("/api/pods/<string:namespace>", methods=["GET"])
+def pods(namespace: str) -> Response:
     return jsonify(get_pods(namespace))
 
-@app.route("/api/services", methods=["GET"])
-def services() -> Response:
-    namespace: str = request.args.get("namespace", "default")
+@app.route("/api/services/<string:namespace>", methods=["GET"])
+def services(namespace: str) -> Response:
     return jsonify(get_services(namespace))
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)

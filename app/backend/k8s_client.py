@@ -3,7 +3,6 @@ from kubernetes.client import V1Pod, V1Service, V1Deployment
 from datetime import datetime, timezone
 from typing import List, Dict
 
-# Load in-cluster config if available
 try:
     config.load_incluster_config()
 except config.config_exception.ConfigException:
