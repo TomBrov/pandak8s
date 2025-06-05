@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "namespace-explorer-backend"
+version = "0.1.0"
+description = "A Flask-based API to view Kubernetes Deployments, Pods, and Services in a given namespace"
+authors = ["TomBrov <tbrovy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.0"
+kubernetes = "^27.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
