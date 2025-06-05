@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -10,21 +9,20 @@ import {
 } from '@/components/ui/select';
 import { API_BASE_URL } from '../config';
 
-
 interface NamespaceDropdownProps {
     selectedNamespace: string;
     onNamespaceChange: (namespace: string) => void;
 }
 
 const NamespaceDropdown = ({ selectedNamespace, onNamespaceChange }: NamespaceDropdownProps) => {
-    const { data: namespaces, isLoading } = useQuery({
+    const { data: namespaces = [], isLoading } = useQuery({
         queryKey: ['namespaces'],
         queryFn: async () => {
-            const response = await fetch(`${API_BASE_URL}/namespaces`);
+            const response = await fetch(`${API_BASE_URL}/api/namespaces`);
             if (!response.ok) throw new Error('Failed to fetch namespaces');
             return response.json();
         },
-        refetchInterval: 30000, // Auto-refresh every 30 seconds
+        refetchInterval: 30000,
     });
 
     return (
@@ -41,12 +39,10 @@ const NamespaceDropdown = ({ selectedNamespace, onNamespaceChange }: NamespaceDr
                     <SelectValue placeholder="Select namespace" />
                 </SelectTrigger>
                 <SelectContent>
-                    {namespaces?.map((namespace: any) => (
-                        <SelectItem
-                            key={namespace.name || namespace}
-                            value={namespace.name || namespace}
-                        >
-                            {namespace.name || namespace}
+                    <SelectItem value="all">All Namespaces</SelectItem>
+                    {namespaces.map((name: string) => (
+                        <SelectItem key={name} value={name}>
+                            {name}
                         </SelectItem>
                     ))}
                 </SelectContent>
