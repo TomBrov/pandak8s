@@ -23,10 +23,16 @@ def format_datetime(dt: datetime) -> str:
 
 def format_k8s_resource(obj: Any, kind: str) -> Dict[str, Any]:
     metadata = obj.metadata
+
     base = {
         "name": metadata.name,
         "namespace": metadata.namespace,
-        "creationTimestamp": format_datetime(metadata.creation_timestamp)
+        "creationTimestamp": format_datetime(metadata.creation_timestamp),
+        "labels": metadata.labels or {},
+        "annotations": metadata.annotations or {},
+        "uid": metadata.uid,
+        "resourceVersion": metadata.resource_version,
+        "generateName": metadata.generate_name,
     }
 
     if kind == "pod":
@@ -45,7 +51,7 @@ def format_k8s_resource(obj: Any, kind: str) -> Dict[str, Any]:
             **base,
             "type": obj.spec.type or "ClusterIP",
             "clusterIP": obj.spec.cluster_ip or "None",
-            "ports": port_list
+            "ports": port_list,
         }
 
     elif kind == "deployment":
@@ -56,10 +62,11 @@ def format_k8s_resource(obj: Any, kind: str) -> Dict[str, Any]:
             **base,
             "replicas": str(replicas),
             "availableReplicas": str(available),
-            "strategy": strategy
+            "strategy": strategy,
         }
 
     return base
+
 
 def get_namespaces() -> List[str]:
     logger.info("Fetching namespaces...")
@@ -124,3 +131,22 @@ def get_all_deployments() -> List[Dict[str, Any]]:
     except Exception as e:
         logger.error(f"Error fetching all deployments: {e}")
         return []
+
+def get_pod_logs(pod_name: str, namespace: str) -> str:
+    logger.info(f"Fetching logs for pod: {pod_name} in namespace: {namespace}")
+    try:
+        log = v1.read_namespaced_pod_log(name=pod_name, namespace=namespace, since_seconds=3600)
+        return log
+    except Exception as e:
+        logger.error(f"Error fetching logs for pod {pod_name}: {e}")
+        return f"Error fetching logs: {str(e)}"
+
+def patch_pod(pod_name: str, namespace: str, metadata: Dict[str, Any]) -> None:
+    logger.info(f"Patching pod {pod_name} in namespace {namespace} with metadata: {metadata}")
+    body = {"metadata": metadata}
+    try:
+        v1.patch_namespaced_pod(name=pod_name, namespace=namespace, body=body)
+        logger.info(f"Successfully patched pod {pod_name}.")
+    except Exception as e:
+        logger.error(f"Error patching pod {pod_name}: {e}")
+        raise e

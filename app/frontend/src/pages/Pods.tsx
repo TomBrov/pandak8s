@@ -12,6 +12,11 @@ import { formatAge, getPodStatusColor } from '@/utils/formatters';
 
 const Pods = () => {
   const [namespace, setNamespace] = useState('all');
+  const [selectedPod, setSelectedPod] = useState<any>(null);
+  const [logs, setLogs] = useState<string>('');
+  const [metadataJson, setMetadataJson] = useState('');
+  const [loadingLogs, setLoadingLogs] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const { data: podsData, isLoading, error, refetch } = useQuery({
     queryKey: ['pods', namespace],
@@ -22,6 +27,51 @@ const Pods = () => {
     },
     refetchInterval: 30000,
   });
+
+  const handleSelectPod = async (pod: any) => {
+    setSelectedPod(pod);
+    setLogs('');
+    setMetadataJson(JSON.stringify({
+      labels: pod.labels || {},
+      annotations: pod.annotations || {}
+    }, null, 2));
+    setLoadingLogs(true);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/logs?podName=${pod.name}&namespace=${pod.namespace}`);
+      const data = await response.json();
+      setLogs(data.logs || 'No logs found.');
+    } catch {
+      setLogs('Failed to fetch logs.');
+    }
+    setLoadingLogs(false);
+  };
+
+  const handleMetadataJsonSave = async () => {
+    setIsSaving(true);
+    try {
+      const parsed = JSON.parse(metadataJson);
+      const res = await fetch(`${API_BASE_URL}/api/pods/metadata`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          podName: selectedPod.name,
+          namespace: selectedPod.namespace,
+          metadata: parsed
+        })
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        alert('Metadata updated!');
+        refetch();
+      } else {
+        alert('Error: ' + result.error);
+      }
+    } catch (err) {
+      alert('Invalid JSON or update failed.');
+    }
+    setIsSaving(false);
+  };
 
   return (
       <Layout showNamespaceSelector onNamespaceChange={setNamespace} currentNamespace={namespace}>
@@ -36,9 +86,6 @@ const Pods = () => {
                 {namespace === 'all'
                     ? 'View and manage Pods in All namespaces'
                     : <>View and manage Pods in the <span className="font-medium text-blue-600">{namespace}</span> namespace</>}
-              </p>
-              <p className="text-gray-600">
-
               </p>
             </div>
             <Button onClick={() => refetch()} disabled={isLoading} variant="outline" size="sm">
@@ -96,7 +143,11 @@ const Pods = () => {
                             ))
                         ) : (
                             podsData.map((pod: any, index: number) => (
-                                <TableRow key={index}>
+                                <TableRow
+                                    key={index}
+                                    onClick={() => handleSelectPod(pod)}
+                                    className="cursor-pointer hover:bg-muted"
+                                >
                                   <TableCell className="font-medium">{pod.name}</TableCell>
                                   <TableCell>{pod.namespace}</TableCell>
                                   <TableCell>
@@ -117,6 +168,47 @@ const Pods = () => {
             </CardContent>
           </Card>
         </div>
+
+        {selectedPod && (
+            <div className="fixed right-0 top-0 w-full max-w-xl h-full bg-white dark:bg-zinc-900 shadow-xl z-50 p-6 overflow-auto border-l border-zinc-200 dark:border-zinc-800">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-semibold">{selectedPod.name}</h2>
+                <button
+                    onClick={() => {
+                      setSelectedPod(null);
+                      setLogs('');
+                      setMetadataJson('');
+                    }}
+                    className="text-sm text-muted-foreground"
+                >
+                  Close
+                </button>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="font-bold mb-2">Edit Metadata (Raw JSON)</h3>
+                <textarea
+                    className="w-full h-64 p-3 rounded border font-mono text-sm bg-zinc-100 dark:bg-zinc-800 dark:text-white"
+                    value={metadataJson}
+                    onChange={(e) => setMetadataJson(e.target.value)}
+                />
+                <Button
+                    className="mt-4"
+                    onClick={handleMetadataJsonSave}
+                    disabled={isSaving}
+                >
+                  {isSaving ? 'Saving...' : 'Save Metadata'}
+                </Button>
+              </div>
+
+              <div className="mt-8">
+                <h3 className="font-bold mb-2">Logs</h3>
+                <pre className="bg-black text-green-400 p-3 rounded text-sm overflow-x-auto h-96">
+              {loadingLogs ? 'Loading logs...' : logs}
+            </pre>
+              </div>
+            </div>
+        )}
       </Layout>
   );
 };
