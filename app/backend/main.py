@@ -8,7 +8,8 @@ from k8s_client import (
     get_all_deployments,
     get_all_services,
     get_pod_logs,
-    patch_pod
+    patch_pod,
+    get_pod_full
 )
 from flask_cors import CORS
 from logger import get_logger
@@ -53,12 +54,18 @@ def update_pod_metadata() -> Response:
     if not pod_name or not metadata:
         return jsonify({"error": "Missing podName or metadata"}), 400
 
-    body = {"metadata": metadata}
+    allowed_keys = {"labels", "annotations", "finalizers"}
+    safe_metadata = {k: v for k, v in metadata.items() if k in allowed_keys}
+
+    if not safe_metadata:
+        return jsonify({"error": "No patchable metadata fields provided"}), 400
+
     try:
-        patch_pod(pod_name=pod_name, namespace=namespace, metadata=metadata)
+        patch_pod(pod_name=pod_name, namespace=namespace, metadata=safe_metadata)
         return jsonify({"status": "success"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @app.route("/api/services", methods=["GET"])
 def services() -> Response:
@@ -82,7 +89,13 @@ def pod_logs() -> Response:
         logger.Error(f"Error fetching logs for pod {pod_name} in namespace {namespace}: {e}")
         return jsonify({"error": str(e)}), 500
 
-
+@app.route("/api/pods/<namespace>/<name>", methods=["GET"])
+def get_single_pod(namespace: str, name: str) -> Response:
+    try:
+        pod_data = get_pod_full(namespace=namespace, name=name)
+        return jsonify(pod_data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)

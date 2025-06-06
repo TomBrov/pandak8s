@@ -9,14 +9,14 @@ import { Package, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { API_BASE_URL } from '../config';
 import { formatAge, getPodStatusColor } from '@/utils/formatters';
+import yaml from 'js-yaml';
 
 const Pods = () => {
   const [namespace, setNamespace] = useState('all');
   const [selectedPod, setSelectedPod] = useState<any>(null);
   const [logs, setLogs] = useState<string>('');
-  const [metadataJson, setMetadataJson] = useState('');
+  const [podYaml, setPodYaml] = useState('');
   const [loadingLogs, setLoadingLogs] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
 
   const { data: podsData, isLoading, error, refetch } = useQuery({
     queryKey: ['pods', namespace],
@@ -31,46 +31,26 @@ const Pods = () => {
   const handleSelectPod = async (pod: any) => {
     setSelectedPod(pod);
     setLogs('');
-    setMetadataJson(JSON.stringify({
-      labels: pod.labels || {},
-      annotations: pod.annotations || {}
-    }, null, 2));
+    setPodYaml('');
     setLoadingLogs(true);
+
     try {
-      const response = await fetch(`${API_BASE_URL}/api/logs?podName=${pod.name}&namespace=${pod.namespace}`);
-      const data = await response.json();
+      const res = await fetch(`${API_BASE_URL}/api/pods/${pod.namespace}/${pod.name}`);
+      const fullPod = await res.json();
+      setPodYaml(yaml.dump(fullPod));
+    } catch {
+      setPodYaml('Failed to load full pod YAML.');
+    }
+
+    try {
+      const logRes = await fetch(`${API_BASE_URL}/api/logs?podName=${pod.name}&namespace=${pod.namespace}`);
+      const data = await logRes.json();
       setLogs(data.logs || 'No logs found.');
     } catch {
       setLogs('Failed to fetch logs.');
     }
+
     setLoadingLogs(false);
-  };
-
-  const handleMetadataJsonSave = async () => {
-    setIsSaving(true);
-    try {
-      const parsed = JSON.parse(metadataJson);
-      const res = await fetch(`${API_BASE_URL}/api/pods/metadata`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          podName: selectedPod.name,
-          namespace: selectedPod.namespace,
-          metadata: parsed
-        })
-      });
-
-      const result = await res.json();
-      if (res.ok) {
-        alert('Metadata updated!');
-        refetch();
-      } else {
-        alert('Error: ' + result.error);
-      }
-    } catch (err) {
-      alert('Invalid JSON or update failed.');
-    }
-    setIsSaving(false);
   };
 
   return (
@@ -97,10 +77,9 @@ const Pods = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                <span>Pods in {namespace}</span>
-                {isLoading && (
-                    <div className="animate-spin h-4 w-4 border-2 border-blue-500 rounded-full border-t-transparent"></div>
-                )}
+                <span className="text-gray-800 dark:text-gray-100">
+                  {namespace === 'all' ? ('Pods in All namespaces') : (<>Pods in <span className="font-medium">{namespace}</span></>)}
+                </span>
               </CardTitle>
               <NamespaceDropdown selectedNamespace={namespace} onNamespaceChange={setNamespace} />
             </CardHeader>
@@ -172,40 +151,58 @@ const Pods = () => {
         {selectedPod && (
             <div className="fixed right-0 top-0 w-full max-w-xl h-full bg-white dark:bg-zinc-900 shadow-xl z-50 p-6 overflow-auto border-l border-zinc-200 dark:border-zinc-800">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">{selectedPod.name}</h2>
+                <h2 className="text-xl font-semibold">
+                  Pod Name: <span className="font-mono text-blue-600">{selectedPod.name}</span>
+                </h2>
+                <Badge className={getPodStatusColor(selectedPod.status)}>
+                  {selectedPod.status}
+                </Badge>
                 <button
                     onClick={() => {
                       setSelectedPod(null);
                       setLogs('');
-                      setMetadataJson('');
+                      setPodYaml('');
                     }}
-                    className="text-sm text-muted-foreground"
+                    className="text-sm text-muted-foreground ml-4"
                 >
                   Close
                 </button>
               </div>
 
-              <div className="mb-6">
-                <h3 className="font-bold mb-2">Edit Metadata (Raw JSON)</h3>
-                <textarea
-                    className="w-full h-64 p-3 rounded border font-mono text-sm bg-zinc-100 dark:bg-zinc-800 dark:text-white"
-                    value={metadataJson}
-                    onChange={(e) => setMetadataJson(e.target.value)}
-                />
-                <Button
-                    className="mt-4"
-                    onClick={handleMetadataJsonSave}
-                    disabled={isSaving}
-                >
-                  {isSaving ? 'Saving...' : 'Save Metadata'}
-                </Button>
+              <div className="mt-2">
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="font-bold">Full Pod YAML</h3>
+                  <Button
+                      size="sm"
+                      variant="secondary"
+                      onClick={() => navigator.clipboard.writeText(podYaml)}
+                  >
+                    Copy YAML
+                  </Button>
+                </div>
+                <pre className="bg-zinc-100 dark:bg-zinc-800 p-3 rounded text-sm overflow-x-auto whitespace-pre-wrap font-mono">
+              {podYaml}
+            </pre>
               </div>
 
               <div className="mt-8">
                 <h3 className="font-bold mb-2">Logs</h3>
-                <pre className="bg-black text-green-400 p-3 rounded text-sm overflow-x-auto h-96">
-              {loadingLogs ? 'Loading logs...' : logs}
-            </pre>
+                <div className="border rounded overflow-auto max-h-96 bg-zinc-100 dark:bg-zinc-800">
+                  <table className="min-w-full text-sm font-mono">
+                    <tbody className="divide-y divide-zinc-200 dark:divide-zinc-700">
+                    {[...logs.trim().split('\n')].reverse().map((line, idx) => (
+                        <tr key={idx}>
+                          <td className="px-4 py-2 text-zinc-800 dark:text-zinc-100 whitespace-pre-wrap break-words">
+                            {line}
+                          </td>
+                        </tr>
+                    ))}
+                    </tbody>
+                  </table>
+                  {loadingLogs && (
+                      <div className="text-center text-xs text-gray-400 p-2">Loading logs...</div>
+                  )}
+                </div>
               </div>
             </div>
         )}

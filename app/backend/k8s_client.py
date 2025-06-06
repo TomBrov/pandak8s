@@ -16,6 +16,14 @@ except config.config_exception.ConfigException:
 v1 = client.CoreV1Api()
 apps_v1 = client.AppsV1Api()
 
+def remove_nulls(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        return {k: remove_nulls(v) for k, v in obj.items() if v is not None and remove_nulls(v) != {} and remove_nulls(v) != []}
+    elif isinstance(obj, list):
+        return [remove_nulls(i) for i in obj if i is not None]
+    else:
+        return obj
+
 def format_datetime(dt: datetime) -> str:
     if not dt:
         return "N/A"
@@ -42,6 +50,7 @@ def format_k8s_resource(obj: Any, kind: str) -> Dict[str, Any]:
             "status": obj.status.phase or "Unknown",
             "node": obj.spec.node_name or "N/A",
             "restartCount": str(restarts),
+            "metadata": obj.metadata.to_dict()
         }
 
     elif kind == "service":
@@ -140,6 +149,65 @@ def get_pod_logs(pod_name: str, namespace: str) -> str:
     except Exception as e:
         logger.error(f"Error fetching logs for pod {pod_name}: {e}")
         return f"Error fetching logs: {str(e)}"
+
+def get_pod_full(namespace: str, name: str) -> Dict[str, Any]:
+    logger.info(f"Fetching structured pod object for {name} in namespace {namespace}")
+    try:
+        pod: V1Pod = v1.read_namespaced_pod(name=name, namespace=namespace)
+
+        return remove_nulls({
+            "apiVersion": "v1",
+            "items": [
+                {
+                    "apiVersion": "v1",
+                    "kind": "Pod",
+                    "metadata": {
+                        "name": pod.metadata.name,
+                        "namespace": pod.metadata.namespace,
+                        "uid": pod.metadata.uid,
+                        "creationTimestamp": pod.metadata.creation_timestamp.isoformat(),
+                        "labels": pod.metadata.labels,
+                        "resourceVersion": pod.metadata.resource_version,
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": c.name,
+                                "image": c.image,
+                                "imagePullPolicy": c.image_pull_policy,
+                                "resources": c.resources.to_dict() if c.resources else {},
+                                "terminationMessagePath": c.termination_message_path,
+                                "terminationMessagePolicy": c.termination_message_policy,
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": vm.mount_path,
+                                        "name": vm.name,
+                                        "readOnly": vm.read_only
+                                    } for vm in (c.volume_mounts or [])
+                                ]
+                            } for c in pod.spec.containers
+                        ],
+                        "dnsPolicy": pod.spec.dns_policy,
+                        "enableServiceLinks": pod.spec.enable_service_links,
+                        "nodeName": pod.spec.node_name,
+                        "preemptionPolicy": pod.spec.preemption_policy,
+                        "priority": pod.spec.priority,
+                        "restartPolicy": pod.spec.restart_policy,
+                        "schedulerName": pod.spec.scheduler_name,
+                        "securityContext": pod.spec.security_context.to_dict() if pod.spec.security_context else {},
+                        "serviceAccount": pod.spec.service_account,
+                        "serviceAccountName": pod.spec.service_account_name,
+                        "terminationGracePeriodSeconds": pod.spec.termination_grace_period_seconds,
+                        "tolerations": [t.to_dict() for t in pod.spec.tolerations or []],
+                        "volumes": [v.to_dict() for v in pod.spec.volumes or []],
+                    }
+                }
+            ]
+        })
+    except Exception as e:
+        logger.error(f"Error fetching full structured pod object: {e}")
+        raise
+
 
 def patch_pod(pod_name: str, namespace: str, metadata: Dict[str, Any]) -> None:
     logger.info(f"Patching pod {pod_name} in namespace {namespace} with metadata: {metadata}")
