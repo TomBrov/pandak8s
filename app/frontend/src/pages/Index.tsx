@@ -65,6 +65,13 @@ const Index = () => {
 
   const isLoading = podsLoading || deploymentsLoading || servicesLoading;
 
+  const getReplicaStatus = (available: number, desired: number) => {
+    const status = `${available}/${desired}`;
+    const isHealthy = desired > 0 && available === desired;
+    const color = isHealthy ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white';
+    return { status, color };
+  };
+
   return (
       <Layout>
         <div className="max-w-7xl mx-auto space-y-6">
@@ -162,7 +169,7 @@ const Index = () => {
                   {filterByName(deploymentsData).map((deployment, i) => {
                     const desired = Number(deployment.replicas);
                     const available = Number(deployment.availableReplicas);
-                    const health = getHealthStatus(desired, available);
+                    const replica = getReplicaStatus(available, desired);
                     return (
                         <TableRow key={i}>
                           <TableCell>{deployment.name}</TableCell>
@@ -170,7 +177,7 @@ const Index = () => {
                           <TableCell>{desired}</TableCell>
                           <TableCell>{available}</TableCell>
                           <TableCell>{deployment.strategy}</TableCell>
-                          <TableCell><Badge className={health.color}>{health.status}</Badge></TableCell>
+                          <TableCell><Badge className={replica.color}>{replica.status}</Badge></TableCell>
                           <TableCell>{formatAge(deployment.creationTimestamp)}</TableCell>
                         </TableRow>
                     );

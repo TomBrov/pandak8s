@@ -2,16 +2,30 @@ import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Layout from '@/components/Layout';
 import NamespaceDropdown from '@/components/NamespaceDropdown';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Rocket, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { API_BASE_URL } from '../config';
-import { formatAge, getHealthStatus } from '@/utils/formatters';
+import { formatAge } from '@/utils/formatters';
 
 const Deployments = () => {
   const [namespace, setNamespace] = useState('all');
+  const [selectedDeployment, setSelectedDeployment] = useState<any>(null);
+  const [deploymentDetails, setDeploymentDetails] = useState<any>(null);
 
   const { data: deploymentsData = [], isLoading, error, refetch } = useQuery({
     queryKey: ['deployments', namespace],
@@ -22,6 +36,24 @@ const Deployments = () => {
     },
     refetchInterval: 30000,
   });
+
+  const fetchDeploymentDetails = async (deployment: any) => {
+    setSelectedDeployment(deployment);
+    const response = await fetch(
+        `${API_BASE_URL}/api/deployments/${deployment.namespace}/${deployment.name}`
+    );
+    if (response.ok) {
+      const data = await response.json();
+      setDeploymentDetails(data);
+    }
+  };
+
+  const getReplicaStatus = (available: number, desired: number) => {
+    const status = `${available}/${desired}`;
+    const isHealthy = desired > 0 && available === desired;
+    const color = isHealthy ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white';
+    return { status, color };
+  };
 
   return (
       <Layout showNamespaceSelector onNamespaceChange={setNamespace} currentNamespace={namespace}>
@@ -85,17 +117,17 @@ const Deployments = () => {
                         {deploymentsData.map((deployment: any, index: number) => {
                           const desired = Number(deployment.replicas || 0);
                           const available = Number(deployment.availableReplicas || 0);
-                          const health = getHealthStatus(desired, available);
+                          const replica = getReplicaStatus(available, desired);
 
                           return (
-                              <TableRow key={index}>
+                              <TableRow key={index} onClick={() => fetchDeploymentDetails(deployment)} className="cursor-pointer hover:bg-gray-100">
                                 <TableCell className="font-medium">{deployment.name}</TableCell>
                                 <TableCell>{deployment.namespace}</TableCell>
                                 <TableCell>{desired}</TableCell>
                                 <TableCell>{available}</TableCell>
                                 <TableCell>{deployment.strategy || 'RollingUpdate'}</TableCell>
                                 <TableCell>
-                                  <Badge className={health.color}>{health.status}</Badge>
+                                  <Badge className={replica.color}>{replica.status}</Badge>
                                 </TableCell>
                                 <TableCell>{formatAge(deployment.creationTimestamp)}</TableCell>
                               </TableRow>
@@ -107,6 +139,41 @@ const Deployments = () => {
               )}
             </CardContent>
           </Card>
+
+          {selectedDeployment && (
+              <div className="fixed right-0 top-0 w-full max-w-xl h-full bg-white dark:bg-zinc-900 shadow-xl z-50 p-6 overflow-auto border-l border-zinc-200 dark:border-zinc-800">
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="text-xl font-semibold">
+                    Deployment: <span className="font-mono text-green-600">{selectedDeployment.name}</span>
+                  </h2>
+                  <Badge className={getReplicaStatus(
+                      Number(selectedDeployment.availableReplicas || 0),
+                      Number(selectedDeployment.replicas || 0)
+                  ).color}>
+                    {getReplicaStatus(
+                        Number(selectedDeployment.availableReplicas || 0),
+                        Number(selectedDeployment.replicas || 0)
+                    ).status}
+                  </Badge>
+                  <button
+                      onClick={() => {
+                        setSelectedDeployment(null);
+                        setDeploymentDetails(null);
+                      }}
+                      className="text-sm text-muted-foreground ml-4"
+                  >
+                    Close
+                  </button>
+                </div>
+
+                <div className="mt-2">
+                  <h3 className="font-bold mb-2">Full Deployment YAML</h3>
+                  <pre className="bg-zinc-100 dark:bg-zinc-800 p-3 rounded text-sm overflow-x-auto whitespace-pre-wrap font-mono">
+                {deploymentDetails ? JSON.stringify(deploymentDetails, null, 2) : 'Loading...'}
+              </pre>
+                </div>
+              </div>
+          )}
         </div>
       </Layout>
   );
