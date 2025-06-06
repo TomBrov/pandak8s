@@ -10,6 +10,7 @@ import Pods from './pages/Pods';
 import Deployments from './pages/Deployments';
 import Services from './pages/Services';
 import NotFound from './pages/NotFound';
+import Graph from "@/pages/Graph";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/pods" element={<Pods />} />
             <Route path="/deployments" element={<Deployments />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/graph" element={<Graph/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

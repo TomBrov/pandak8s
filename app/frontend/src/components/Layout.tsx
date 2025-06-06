@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Package, Rocket, Settings, PanelLeftClose, PanelLeft } from 'lucide-react';
+import { Home, Package, Rocket, Settings, PanelLeftClose, PanelLeft, Network } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
@@ -22,6 +22,7 @@ const Layout = ({ children, showNamespaceSelector, onNamespaceChange, currentNam
     { name: 'Pods', href: '/pods', icon: Package },
     { name: 'Deployments', href: '/deployments', icon: Rocket },
     { name: 'Services', href: '/services', icon: Settings },
+    { name: 'Graph', href: '/graph', icon: Network }
   ];
 
   return (

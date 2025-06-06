@@ -1,48 +1,53 @@
-# Namespace Explorer – Backend API
-
-This is the backend service for Namespace Explorer, built with Flask and the Kubernetes Python client.  
-It exposes RESTful endpoints to retrieve Deployments, Pods, and Services from a given Kubernetes namespace.
+Here's the cleaned-up and focused version of your backend-only `README.md`, ready to copy and paste:
 
 ---
 
-## Backend Structure
+# 🧠 Namespace Explorer – Backend API
+
+This is the backend service for **Namespace Explorer**, built with **Flask** and the **Kubernetes Python client**.
+It provides RESTful API endpoints to fetch **Deployments**, **Pods**, **Services**, and **Namespaces** from a Kubernetes cluster.
+
+---
+
+## 🧱 Project Structure
 
 ```
-backend/
+app/
 ├── __init__.py          # App factory
-├── main.py              # Entrypoint for Flask
-├── k8s_client.py        # Handles K8s API interactions
+├── main.py              # Flask app entrypoint and routing
+├── k8s_client.py        # K8s API interaction layer
 ├── utils.py             # (Optional) Shared utilities
-├── Dockerfile           # Dockerfile for containerization
+├── Dockerfile           # Container build file
 └── README.md            # You are here
 ```
 
 ---
 
-## API Endpoints
+## 🔌 API Endpoints
 
-All endpoints return `application/json`.
+All responses are `application/json`.
 
-### Health
+### ✅ Health Check
 
-`GET /api/health`  
-Returns basic application status.
-
----
-
-### Namespaces
-
-`GET /api/namespaces`  
-Returns a list of all available namespaces.
+**`GET /api/health`**
+Returns the status of the API.
 
 ---
 
-### Deployments
+### 📛 Namespaces
 
-`GET /api/deployments?namespace=<your-namespace>`  
-Returns all Deployments in the given namespace.
+**`GET /api/namespaces`**
+Lists all available namespaces in the Kubernetes cluster.
 
-Response example:
+---
+
+### 🚀 Deployments
+
+**`GET /api/deployments?namespace=<namespace>`**
+Returns Deployments within the given namespace.
+
+**Example:**
+
 ```json
 [
   {
@@ -56,12 +61,13 @@ Response example:
 
 ---
 
-### Pods
+### 📦 Pods
 
-`GET /api/pods?namespace=<your-namespace>`  
-Returns all Pods in the given namespace.
+**`GET /api/pods?namespace=<namespace>`**
+Returns Pods within the given namespace.
 
-Response example:
+**Example:**
+
 ```json
 [
   {
@@ -74,14 +80,18 @@ Response example:
 ]
 ```
 
+Supports viewing `kube-system` Pods as well:
+**`GET /api/pods?namespace=kube-system`**
+
 ---
 
-### Services
+### 🔧 Services
 
-`GET /api/services?namespace=<your-namespace>`  
-Returns all Services in the given namespace.
+**`GET /api/services?namespace=<namespace>`**
+Returns Services within the given namespace.
 
-Response example:
+**Example:**
+
 ```json
 [
   {
@@ -95,20 +105,28 @@ Response example:
 
 ---
 
-## Requirements
+## 📦 Containerization
 
-- Python 3.10+
-- Flask 3.x
-- kubernetes-client (Python)
+Build and run the Docker container:
+
+```bash
+docker build -t namespace-explorer-backend .
+docker run -p 5000:5000 namespace-explorer-backend
+```
 
 ---
 
-## 👨‍💻 Usage (Local Dev)
+## 🧪 Local Development
 
-To run manually:
+### Requirements:
+
+* Python 3.10+
+* Poetry
+* Valid `~/.kube/config` for cluster access
+
+### Start the server:
 
 ```bash
+poetry install
 poetry run python app/main.py
 ```
-
-Ensure you have a valid `~/.kube/config` for access to the cluster.
