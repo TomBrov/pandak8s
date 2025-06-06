@@ -9,4 +9,7 @@ COPY pyproject.toml README.md ./
 RUN poetry install --no-root
 
 COPY main.py k8s_client.py logger.py ./
+
+EXPOSE 8080
+
 CMD ["poetry", "run", "python", "main.py"]
