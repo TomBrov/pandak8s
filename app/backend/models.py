@@ -1,0 +1,41 @@
+from marshmallow import Schema, fields
+
+class DeploymentModel(Schema):
+    name = fields.String(metadata={"example": "webapp"})
+    namespace = fields.String(metadata={"example": "default"})
+    creationTimestamp = fields.String(metadata={"example": "2024-06-01 12:00:00 UTC"})
+    labels = fields.Dict(metadata={"example": {"app": "web"}})
+    annotations = fields.Dict(metadata={"example": {}})
+    uid = fields.String(metadata={"example": "abcd-1234"})
+    resourceVersion = fields.String(metadata={"example": "101"})
+    generateName = fields.String(metadata={"example": "webapp-"})
+    replicas = fields.String(metadata={"example": "3"})
+    availableReplicas = fields.String(metadata={"example": "2"})
+    strategy = fields.String(metadata={"example": "RollingUpdate"})
+
+class PodModel(Schema):
+    name = fields.String(metadata={"example": "nginx-abc123"})
+    namespace = fields.String(metadata={"example": "default"})
+    creationTimestamp = fields.String(metadata={"example": "2024-06-01 12:00:00 UTC"})
+    labels = fields.Dict(metadata={"example": {"env": "dev"}})
+    annotations = fields.Dict(metadata={"example": {}})
+    uid = fields.String(metadata={"example": "pod-uid-xyz"})
+    resourceVersion = fields.String(metadata={"example": "200"})
+    generateName = fields.String(metadata={"example": "nginx-"})
+    status = fields.String(metadata={"example": "Running"})
+    node = fields.String(metadata={"example": "ip-10-0-0-1"})
+    restartCount = fields.String(metadata={"example": "1"})
+    metadata = fields.Dict(metadata={"example": {"labels": {"env": "dev"}}})
+
+class ServiceModel(Schema):
+    name = fields.String(metadata={"example": "webapp-svc"})
+    namespace = fields.String(metadata={"example": "default"})
+    creationTimestamp = fields.String(metadata={"example": "2024-06-01 12:00:00 UTC"})
+    labels = fields.Dict(metadata={"example": {"tier": "frontend"}})
+    annotations = fields.Dict(metadata={"example": {}})
+    uid = fields.String(metadata={"example": "svc-uuid"})
+    resourceVersion = fields.String(metadata={"example": "501"})
+    generateName = fields.String(metadata={"example": "webapp-svc-"})
+    type = fields.String(metadata={"example": "ClusterIP"})
+    clusterIP = fields.String(metadata={"example": "10.0.0.1"})
+    ports = fields.List(fields.String, metadata={"example": ["80:8080/TCP"]})

@@ -1,0 +1,6 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Values.backend.rbac.fullAccessRole.name }}
+rules:
+  {{ toYaml .Values.backend.rbac.fullAccessRole.rules | indent 2 }}

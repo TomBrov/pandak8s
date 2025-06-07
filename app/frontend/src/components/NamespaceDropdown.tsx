@@ -7,7 +7,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select';
-import { API_BASE_URL } from '../config';
 
 interface NamespaceDropdownProps {
     selectedNamespace: string;
@@ -18,7 +17,7 @@ const NamespaceDropdown = ({ selectedNamespace, onNamespaceChange }: NamespaceDr
     const { data: namespaces = [], isLoading } = useQuery({
         queryKey: ['namespaces'],
         queryFn: async () => {
-            const response = await fetch(`${API_BASE_URL}/api/namespaces`);
+            const response = await fetch(`/api/namespaces`);
             if (!response.ok) throw new Error('Failed to fetch namespaces');
             return response.json();
         },

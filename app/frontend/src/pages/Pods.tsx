@@ -7,7 +7,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Package, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { API_BASE_URL } from '../config';
 import { formatAge, getPodStatusColor } from '@/utils/formatters';
 import yaml from 'js-yaml';
 
@@ -21,7 +20,7 @@ const Pods = () => {
   const { data: podsData, isLoading, error, refetch } = useQuery({
     queryKey: ['pods', namespace],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/pods?namespace=${namespace}`);
+      const response = await fetch(`/api/pods?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch pods');
       return response.json();
     },
@@ -35,7 +34,7 @@ const Pods = () => {
     setLoadingLogs(true);
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/pods/${pod.namespace}/${pod.name}`);
+      const res = await fetch(`/api/pods/${pod.namespace}/${pod.name}`);
       const fullPod = await res.json();
       setPodYaml(yaml.dump(fullPod));
     } catch {
@@ -43,7 +42,7 @@ const Pods = () => {
     }
 
     try {
-      const logRes = await fetch(`${API_BASE_URL}/api/logs?podName=${pod.name}&namespace=${pod.namespace}`);
+      const logRes = await fetch(`/api/logs?podName=${pod.name}&namespace=${pod.namespace}`);
       const data = await logRes.json();
       setLogs(data.logs || 'No logs found.');
     } catch {
