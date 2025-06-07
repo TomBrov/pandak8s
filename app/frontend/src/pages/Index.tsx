@@ -8,7 +8,6 @@ import { Badge } from '@/components/ui/badge';
 import { Package, Rocket, Settings, Search, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { API_BASE_URL } from '../config';
 import {
   formatAge,
   formatPorts,
@@ -25,7 +24,7 @@ const Index = () => {
   const { data: podsData = [], isLoading: podsLoading } = useQuery({
     queryKey: ['pods', namespace, refreshKey],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/pods?namespace=${namespace}`);
+      const response = await fetch(`/api/pods?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch pods');
       return response.json();
     },
@@ -34,7 +33,7 @@ const Index = () => {
   const { data: deploymentsData = [], isLoading: deploymentsLoading } = useQuery({
     queryKey: ['deployments', namespace, refreshKey],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/deployments?namespace=${namespace}`);
+      const response = await fetch(`/api/deployments?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch deployments');
       return response.json();
     },
@@ -43,7 +42,7 @@ const Index = () => {
   const { data: servicesData = [], isLoading: servicesLoading } = useQuery({
     queryKey: ['services', namespace, refreshKey],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/services?namespace=${namespace}`);
+      const response = await fetch(`/api/services?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch services');
       return response.json();
     },
@@ -52,7 +51,7 @@ const Index = () => {
   const { data: backendStatus } = useQuery({
     queryKey: ['backend-status'],
     queryFn: async () => {
-      const res = await fetch(`${API_BASE_URL}/api/health`);
+      const res = await fetch(`/api/health`);
       return res.ok;
     },
     refetchInterval: 30000,

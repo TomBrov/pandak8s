@@ -19,7 +19,6 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Rocket, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { API_BASE_URL } from '../config';
 import { formatAge } from '@/utils/formatters';
 
 const Deployments = () => {
@@ -30,7 +29,7 @@ const Deployments = () => {
   const { data: deploymentsData = [], isLoading, error, refetch } = useQuery({
     queryKey: ['deployments', namespace],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/deployments?namespace=${namespace}`);
+      const response = await fetch(`/api/deployments?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch deployments');
       return response.json();
     },
@@ -40,7 +39,7 @@ const Deployments = () => {
   const fetchDeploymentDetails = async (deployment: any) => {
     setSelectedDeployment(deployment);
     const response = await fetch(
-        `${API_BASE_URL}/api/deployments/${deployment.namespace}/${deployment.name}`
+        `/api/deployments/${deployment.namespace}/${deployment.name}`
     );
     if (response.ok) {
       const data = await response.json();

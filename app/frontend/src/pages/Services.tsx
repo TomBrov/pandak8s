@@ -7,7 +7,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Settings, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { API_BASE_URL } from '../config';
 import { formatPorts, getServiceTypeColor, formatAge } from '@/utils/formatters';
 
 const Services = () => {
@@ -16,7 +15,7 @@ const Services = () => {
   const { data: servicesData, isLoading, error, refetch } = useQuery({
     queryKey: ['services', namespace],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}/api/services?namespace=${namespace}`);
+      const response = await fetch(`/api/services?namespace=${namespace}`);
       if (!response.ok) throw new Error('Failed to fetch services');
       return response.json();
     },

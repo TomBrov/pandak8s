@@ -1,5 +1,8 @@
 build:
-	docker build -t test_backend:latest .
+	docker build -t brovy/pandak8s-backend:latest .
+
+push:
+	docker push brovy/pandak8s-backend:latest
 
 run-local:
 	docker run \

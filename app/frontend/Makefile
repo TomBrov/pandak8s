@@ -1,5 +1,8 @@
 build:
-	docker build -t test_frontend:latest --build-arg VITE_API_BASE_URL=http://localhost:8080 .
+	docker build -t brovy/pandak8s-frontend:latest .
+
+push:
+	docker push brovy/pandak8s-frontend:latest
 
 run-local:
 	docker run \

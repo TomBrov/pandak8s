@@ -1,0 +1,65 @@
+ingress:
+  name: application-ingress
+  className: alb
+  host: test.vicarius.xyz
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    external-dns.alpha.kubernetes.io/hostname: test.vicarius.xyz
+
+
+frontend:
+  name: frontend
+  appLabel: frontend
+  replicaCount: 2
+  containerPort: 80
+  image:
+    repository: test_frontend
+    tag: latest
+    pullPolicy: Always
+  env:
+    backendHost: backend
+  service:
+    port: 80
+    type: ClusterIP
+
+backend:
+  name: backend
+  appLabel: backend
+  replicaCount: 3
+  containerPort: 8080
+  image:
+    repository: test_backend
+    tag: latest
+    pullPolicy: Always
+  service:
+    port: 80
+    type: ClusterIP
+  serviceAccountName: backend-sa
+  rbac:
+    enabled: true
+    fullAccessRole:
+      name: backend-full-access
+      rules:
+        - apiGroups: [""]
+          resources: ["pods", "services"]
+          verbs: ["get", "list", "create", "update", "delete"]
+        - apiGroups: ["apps"]
+          resources: ["deployments"]
+          verbs: ["get", "list", "create", "update", "delete"]
+    fullAccessBinding:
+      name: backend-clusterrole-binding
+    readonlyRole:
+      name: backend-readonly
+      namespace: kube-system
+      rules:
+        - apiGroups: [""]
+          resources: ["pods", "services"]
+          verbs: ["get", "list"]
+        - apiGroups: ["apps"]
+          resources: ["deployments"]
+          verbs: ["get", "list"]
+    readonlyBinding:
+      name: backend-readonly-binding
