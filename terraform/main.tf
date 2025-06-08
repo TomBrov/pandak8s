@@ -16,16 +16,6 @@ module "vpc" {
   single_nat_gateway = true
 }
 
-resource "aws_ecr_repository" "api" {
-  name                 = "pandak8s-api"
-  force_delete         = true
-}
-
-resource "aws_ecr_repository" "web" {
-  name                 = "pandak8s-web"
-  force_delete         = true
-}
-
 # EKS Cluster
 module "eks" {
   depends_on = [module.vpc]
@@ -37,6 +27,8 @@ module "eks" {
   subnet_ids      = module.vpc.private_subnets
   vpc_id          = module.vpc.vpc_id
   enable_irsa     = true
+  cluster_endpoint_public_access  = true
+  cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
 
   eks_managed_node_groups = {
     default = {
@@ -56,9 +48,16 @@ module "eks" {
   }
 }
 
+resource "null_resource" "update_kubeconfig" {
+    depends_on = [module.eks]
+    provisioner "local-exec" {
+        command = "aws eks --region ${var.region} update-kubeconfig --name ${module.eks.cluster_name}"
+    }
+}
+
 module "alb_irsa" {
   source        = "./modules/alb-irsa"
-  depends_on = [module.eks]
+  depends_on = [null_resource.update_kubeconfig]
   cluster_name  = var.cluster_name
   oidc_provider = module.eks.oidc_provider_arn
   oidc_url      = module.eks.oidc_provider
@@ -70,7 +69,7 @@ resource "helm_release" "aws_load_balancer_controller" {
   chart            = "aws-load-balancer-controller"
   namespace        = "kube-system"
   create_namespace = false
-  depends_on = [module.eks]
+  depends_on = [module.alb_irsa]
 
   set {
     name  = "clusterName"
