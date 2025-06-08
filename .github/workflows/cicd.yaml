@@ -32,6 +32,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     needs: get-changes
+    if: needs.get-changes.outputs.service != ''
     strategy:
       matrix:
         service: ${{ fromJson(needs.get-changes.outputs.service) }}
