@@ -4,3 +4,6 @@
 **/poetry.lock
 **/.DS_Store
 **/node_modules
+**/.terraform*
+**/terraform.tfstate*
+terraform
