@@ -1,5 +1,24 @@
 name: docker-build-push
 author: tomb
 description: docker-build-push
+inputs:
+  tag:
+    description: Tag for the image
+    required: true
+    default: latest
+  service:
+    description: Service name to use for the image
+    required: true
+    default: frontend
 runs:
-  using:
+  using: composite
+  steps:
+    - name: Build Docker Image
+      working-directory: app/${{ inputs.service }}
+      shell: bash
+      run: make TAG=${{ inputs.tag }} build
+
+    - name: Push Docker Image
+      working-directory: app/${{ inputs.service }}
+      shell: bash
+      run: make TAG=${{ inputs.tag }} push
