@@ -1,8 +1,10 @@
+TAG ?= latest
+
 build:
-	docker build -t brovy/pandak8s-frontend:latest .
+	docker build -t brovy/pandak8s-frontend:$(TAG) .
 
 push:
-	docker push brovy/pandak8s-frontend:latest
+	docker push brovy/pandak8s-frontend:$(TAG)
 
 run-local:
 	docker run \
