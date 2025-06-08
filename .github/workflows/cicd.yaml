@@ -31,10 +31,12 @@ jobs:
           changed=()
           
           if [[ "${{ steps.filter.outputs.frontend }}" == 'true' ]]; then
+            echo "Frontend has changed"
             changed+=("\"frontend\"")
           fi
                 
           if [[ "${{ steps.filter.outputs.backend }}" == 'true' ]]; then
+            echo "Backend has changed"
             changed+=("\"backend\"")
           fi
           
@@ -44,7 +46,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     needs: get-changes
-    if: needs.get-changes.outputs.services != '[""]'
+    if: needs.get-changes.outputs.services != '[]'
     strategy:
       matrix:
         service: ${{ fromJson(needs.get-changes.outputs.services) }}
