@@ -9,14 +9,13 @@ ingress:
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     external-dns.alpha.kubernetes.io/hostname: test.vicarius.xyz
 
-
 frontend:
   name: frontend
   appLabel: frontend
   replicaCount: 2
   containerPort: 80
   image:
-    repository: test_frontend
+    repository: brovy/pandak8s-frontend
     tag: latest
     pullPolicy: Always
   env:
@@ -31,7 +30,7 @@ backend:
   replicaCount: 3
   containerPort: 8080
   image:
-    repository: test_backend
+    repository: brovy/pandak8s-backend
     tag: latest
     pullPolicy: Always
   service:

@@ -93,27 +93,10 @@ resource "helm_release" "aws_load_balancer_controller" {
   }
 }
 
-# resource "helm_release" "argocd" {
-#   name             = "argocd"
-#   repository       = "https://argoproj.github.io/argo-helm"
-#   chart            = "argo-cd"
-#   namespace        = "argocd"
-#   create_namespace = true
-#
-#   set {
-#     name  = "server.service.type"
-#     value = "LoadBalancer"
-#   }
-#
-#   set {
-#     name  = "configs.params.server\.insecure"
-#     value = "true"
-#   }
-#
-#   depends_on = [module.eks]
-# }
-#
-# resource "kubernetes_yaml" "argocd_app" {
-#   yaml_body = file("./manifests/pandak8s-app.yaml")
-#   depends_on = [helm_release.argocd]
-# }
+resource "helm_release" "pandak8s" {
+  chart = "../pandak8s"
+  name  = "pandak8s"
+  namespace = "pandak8s"
+  create_namespace = true
+  depends_on = [helm_release.aws_load_balancer_controller]
+}
