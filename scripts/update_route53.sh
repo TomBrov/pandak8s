@@ -2,9 +2,9 @@
 
 SUBDOMAIN="test.vicarius.xyz"
 DOMAIN="vicarius.xyz"
-NAMESPACE="ingress-nginx"
-SERVICE_NAME="ingress-nginx-controller"
-TTL=60
+NAMESPACE="pandak8s"
+SERVICE_NAME="app-pandak8s-ingress-nginx-controller"
+TTL=300
 
 echo "Looking for NLB DNS name for service $SERVICE_NAME in namespace $NAMESPACE..."
 NLB_DNS=$(kubectl get svc -n "$NAMESPACE" "$SERVICE_NAME" -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')

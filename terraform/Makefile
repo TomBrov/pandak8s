@@ -24,6 +24,10 @@ destroy:
 	@echo "Destroying all resources..."
 	terraform destroy --var-file=$(VAR_FILE) -auto-approve
 
+update-dns:
+	@echo "Updating DNS records..."
+	bash ../scripts/update_route53.sh
+
 clean:
 	@echo "Cleaning Terraform state..."
 	rm -rf .terraform* terraform.tfstate*
