@@ -1,5 +1,4 @@
 ingress-nginx:
-  namespaceOverride: ingress-nginx
   controller:
     enabled: true
     service:
@@ -11,9 +10,6 @@ ingress-nginx:
     ingressClass: nginx
     ingressClassResource:
       name: nginx
-
-nginx:
-  namespace: ingress-nginx
 
 ingress:
   name: application-ingress
