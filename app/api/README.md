@@ -2,46 +2,32 @@ Here's the cleaned-up and focused version of your backend-only `README.md`, read
 
 ---
 
-# 🧠 Namespace Explorer – Backend API
+# PandaK8S – Backend API
 
 This is the backend service for **Namespace Explorer**, built with **Flask** and the **Kubernetes Python client**.
 It provides RESTful API endpoints to fetch **Deployments**, **Pods**, **Services**, and **Namespaces** from a Kubernetes cluster.
 
 ---
 
-## 🧱 Project Structure
-
-```
-app/
-├── __init__.py          # App factory
-├── main.py              # Flask app entrypoint and routing
-├── k8s_client.py        # K8s API interaction layer
-├── utils.py             # (Optional) Shared utilities
-├── Dockerfile           # Container build file
-└── README.md            # You are here
-```
-
----
-
-## 🔌 API Endpoints
+## API Endpoints
 
 All responses are `application/json`.
 
-### ✅ Health Check
+### Health Check
 
 **`GET /api/health`**
 Returns the status of the API.
 
 ---
 
-### 📛 Namespaces
+### Namespaces
 
 **`GET /api/namespaces`**
 Lists all available namespaces in the Kubernetes cluster.
 
 ---
 
-### 🚀 Deployments
+### Deployments
 
 **`GET /api/deployments?namespace=<namespace>`**
 Returns Deployments within the given namespace.
@@ -61,7 +47,7 @@ Returns Deployments within the given namespace.
 
 ---
 
-### 📦 Pods
+### Pods
 
 **`GET /api/pods?namespace=<namespace>`**
 Returns Pods within the given namespace.
@@ -85,7 +71,7 @@ Supports viewing `kube-system` Pods as well:
 
 ---
 
-### 🔧 Services
+### Services
 
 **`GET /api/services?namespace=<namespace>`**
 Returns Services within the given namespace.
@@ -105,7 +91,7 @@ Returns Services within the given namespace.
 
 ---
 
-## 📦 Containerization
+## Containerization
 
 Build and run the Docker container:
 
@@ -116,7 +102,7 @@ docker run -p 5000:5000 namespace-explorer-backend
 
 ---
 
-## 🧪 Local Development
+## Local Development
 
 ### Requirements:
 
