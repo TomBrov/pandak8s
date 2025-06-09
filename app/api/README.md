@@ -1,10 +1,6 @@
-Here's the cleaned-up and focused version of your backend-only `README.md`, ready to copy and paste:
-
----
-
 # PandaK8S – Backend API
 
-This is the backend service for **Namespace Explorer**, built with **Flask** and the **Kubernetes Python client**.
+This is the backend service for **PandaK8S**, built with **Flask** and the **Kubernetes Python client**.
 It provides RESTful API endpoints to fetch **Deployments**, **Pods**, **Services**, and **Namespaces** from a Kubernetes cluster.
 
 ---

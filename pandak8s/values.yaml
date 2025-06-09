@@ -27,7 +27,7 @@ frontend:
   containerPort: 80
   image:
     repository: 058264138725.dkr.ecr.us-east-2.amazonaws.com/pandak8s-web
-    tag: latest
+    tag: 0.0.1
     pullPolicy: Always
   env:
     backendHost: backend
@@ -42,7 +42,7 @@ backend:
   containerPort: 8080
   image:
     repository: 058264138725.dkr.ecr.us-east-2.amazonaws.com/pandak8s-api
-    tag: latest
+    tag: 0.0.1
     pullPolicy: Always
   service:
     port: 80

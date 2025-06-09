@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "namespace-explorer-backend"
-version = "0.1.0"
+name = "pandak8s-api"
+version = "0.0.1"
 description = "A Flask-based API to view Kubernetes Deployments, Pods, and Services in a given namespace"
 authors = ["TomBrov <tbrovy@gmail.com>"]
 readme = "README.md"

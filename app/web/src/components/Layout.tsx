@@ -22,7 +22,6 @@ const Layout = ({ children, showNamespaceSelector, onNamespaceChange, currentNam
     { name: 'Pods', href: '/pods', icon: Package },
     { name: 'Deployments', href: '/deployments', icon: Rocket },
     { name: 'Services', href: '/services', icon: Settings },
-    { name: 'Graph', href: '/graph', icon: Network }
   ];
 
   return (

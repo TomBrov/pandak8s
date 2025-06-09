@@ -77,4 +77,4 @@ jobs:
           registry: ${{ steps.login-ecr.outputs.registry }}
           product_name: pandak8s
           service: ${{ matrix.service }}
-          tag: latest
+          tag: 0.0.1
