@@ -1,5 +1,5 @@
 REGION ?= us-east-2
-CLUSTER_NAME ?= pandak8s-cluster
+CLUSTER_NAME ?= barkuni-pandak8s-cluster
 VAR_FILE ?= envs/dev.tfvars
 
 .PHONY: init eks apply-all kubeconfig clean

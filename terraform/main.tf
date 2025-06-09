@@ -2,20 +2,6 @@ data "aws_availability_zones" "available" {}
 
 data "aws_caller_identity" "current" {}
 
-data "aws_route53_zone" "main" {
-  name = "vicarius.xyz"
-}
-
-resource "aws_route53_record" "ingress_dns" {
-  depends_on = [data.aws_route53_zone.main]
-  zone_id = data.aws_route53_zone.main.zone_id
-  name    = "test.vicarius.xyz"
-  type    = "CNAME"
-  ttl     = 300
-  records = ["placeholder.elb.amazonaws.com"]
-}
-
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.1.1"
@@ -64,7 +50,7 @@ module "eks" {
       max_size     = 3
       min_size     = 1
 
-      instance_types = ["t2.medium"]
+      instance_types = ["t3.medium"]
       capacity_type  = "ON_DEMAND"
 
       iam_role_additional_policies = {
