@@ -12,6 +12,9 @@ ingress-nginx:
     ingressClassResource:
       name: nginx
 
+nginx:
+  namespace: ingress-nginx
+
 ingress:
   name: application-ingress
   className: nginx
