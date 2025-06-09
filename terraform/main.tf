@@ -1,6 +1,21 @@
 data "aws_availability_zones" "available" {}
 
-# VPC
+data "aws_caller_identity" "current" {}
+
+data "aws_route53_zone" "main" {
+  name = "vicarius.xyz"
+}
+
+resource "aws_route53_record" "ingress_dns" {
+  depends_on = [data.aws_route53_zone.main]
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "test.vicarius.xyz"
+  type    = "CNAME"
+  ttl     = 300
+  records = ["placeholder.elb.amazonaws.com"]
+}
+
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.1.1"
@@ -12,13 +27,37 @@ module "vpc" {
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets
 
-  enable_nat_gateway = true
-  single_nat_gateway = true
+  enable_nat_gateway       = true
+  single_nat_gateway       = true
+  map_public_ip_on_launch  = true
+  enable_dns_hostnames     = true
+  enable_dns_support       = true
+
+  public_subnet_tags = {
+    "kubernetes.io/role/elb"                          = "1"
+    "kubernetes.io/cluster/${var.cluster_name}"       = "shared"
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb"                 = "1"
+    "kubernetes.io/cluster/${var.cluster_name}"       = "shared"
+  }
 }
 
-# EKS Cluster
+resource "aws_ecr_repository" "pandak8s-web" {
+  name = "pandak8s-web"
+  image_tag_mutability = "IMMUTABLE"
+  force_delete = true
+}
+
+resource "aws_ecr_repository" "pandak8s-api" {
+  name = "pandak8s-api"
+  image_tag_mutability = "IMMUTABLE"
+  force_delete = true
+}
+
 module "eks" {
-  depends_on = [module.vpc]
+  depends_on = [module.vpc, aws_ecr_repository.pandak8s-api, aws_ecr_repository.pandak8s-web]
   source  = "terraform-aws-modules/eks/aws"
   version = "20.8.4"
 
@@ -29,6 +68,7 @@ module "eks" {
   enable_irsa     = true
   cluster_endpoint_public_access  = true
   cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
+  enable_cluster_creator_admin_permissions = true
 
   eks_managed_node_groups = {
     default = {
@@ -48,54 +88,68 @@ module "eks" {
   }
 }
 
-resource "null_resource" "update_kubeconfig" {
-    depends_on = [module.eks]
-    provisioner "local-exec" {
-        command = "aws eks --region ${var.region} update-kubeconfig --name ${module.eks.cluster_name}"
+module "eks_aws_auth" {
+  source  = "terraform-aws-modules/eks/aws//modules/aws-auth"
+  version = "20.8.4"
+
+  depends_on = [module.eks]
+
+  manage_aws_auth_configmap = true
+
+  aws_auth_roles = [
+    {
+      rolearn  = module.eks.eks_managed_node_groups["default"].iam_role_arn
+      username = "system:node:{{EC2PrivateDNSName}}"
+      groups   = ["system:bootstrappers", "system:nodes"]
     }
+  ]
+
+  aws_auth_users = [
+    {
+      userarn  = data.aws_caller_identity.current.arn
+      username = "admin"
+      groups   = ["system:masters"]
+    }
+  ]
 }
 
-module "alb_irsa" {
-  source        = "./modules/alb-irsa"
-  depends_on = [null_resource.update_kubeconfig]
-  cluster_name  = var.cluster_name
-  oidc_provider = module.eks.oidc_provider_arn
-  oidc_url      = module.eks.oidc_provider
-}
-
-resource "helm_release" "aws_load_balancer_controller" {
-  name             = "aws-load-balancer-controller"
-  repository       = "https://aws.github.io/eks-charts"
-  chart            = "aws-load-balancer-controller"
-  namespace        = "kube-system"
-  create_namespace = false
-  depends_on = [module.alb_irsa]
-
-  set {
-    name  = "clusterName"
-    value = module.eks.cluster_name
-  }
-
-  set {
-    name  = "serviceAccount.create"
-    value = "false"
-  }
-
-  set {
-    name  = "serviceAccount.name"
-    value = "aws-load-balancer-controller"
-  }
-
-  set {
-    name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
-    value = module.alb_irsa.role_arn
-  }
-}
-
-resource "helm_release" "pandak8s" {
-  chart = "../pandak8s"
-  name  = "pandak8s"
-  namespace = "pandak8s"
+resource "helm_release" "argocd" {
+  depends_on = [module.eks_aws_auth]
+  name  = "argocd"
+  repository = "https://argoproj.github.io/argo-helm"
   create_namespace = true
-  depends_on = [helm_release.aws_load_balancer_controller]
+  namespace = "argocd"
+  chart = "argo-cd"
+  version = "7.7.16"
+}
+
+resource "kubernetes_manifest" "app-pandak8s" {
+  depends_on = [helm_release.argocd]
+  manifest = {
+    apiVersion = "argoproj.io/v1alpha1"
+    kind       = "Application"
+    metadata = {
+      name      = "app-pandak8s"
+      namespace = "argocd"
+    }
+    spec = {
+      project = "default"
+      source = {
+        repoURL        = var.repo_url
+        targetRevision = "HEAD"
+        path : "pandak8s"
+      }
+      destination = {
+        server    = "https://kubernetes.default.svc"
+        namespace = "pandak8s"
+      }
+      syncPolicy = {
+        automated = {
+          prune    = true
+          selfHeal = true
+        }
+        syncOptions = ["CreateNamespace=true"]
+      }
+    }
+  }
 }

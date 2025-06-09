@@ -4,4 +4,4 @@ metadata:
   name: {{ .Values.backend.rbac.readonlyRole.name }}
   namespace: {{ .Values.backend.rbac.readonlyRole.namespace }}
 rules:
-  {{ toYaml .Values.backend.rbac.readonlyRole.rules | indent 2 }}
+{{ toYaml .Values.backend.rbac.fullAccessRole.rules | indent 4 }}

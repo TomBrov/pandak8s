@@ -14,3 +14,6 @@ public_subnets = [
   "10.0.102.0/24",
   "10.0.103.0/24"
 ]
+
+repo_url = "https://github.com/TomBrov/pandak8s.git"
+

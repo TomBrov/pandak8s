@@ -6,10 +6,6 @@ output "eks_cluster_name" {
   value = module.eks.cluster_name
 }
 
-output "eks_cluster_endpoint" {
-  value = module.eks.cluster_endpoint
-}
-
 output "private_subnets" {
   value = module.vpc.private_subnets
 }

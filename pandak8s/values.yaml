@@ -1,13 +1,22 @@
+ingress-nginx:
+  controller:
+    enabled: true
+    service:
+      type: LoadBalancer
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+        service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+    ingressClass: nginx
+    ingressClassResource:
+      name: nginx
+
 ingress:
   name: application-ingress
-  className: alb
+  className: nginx
   host: test.vicarius.xyz
   annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
-    alb.ingress.kubernetes.io/backend-protocol: HTTP
     external-dns.alpha.kubernetes.io/hostname: test.vicarius.xyz
+
 
 frontend:
   name: frontend

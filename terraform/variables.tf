@@ -31,3 +31,9 @@ variable "cluster_name" {
   type        = string
   default     = "barkuni-cluster"
 }
+
+variable "repo_url" {
+  description = "Git repository URL"
+  type        = string
+}
+
