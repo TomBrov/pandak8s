@@ -8,6 +8,6 @@ push:
 
 run-local:
 	docker run \
-	  -p 8000:80 \
+	  -p 8900:80 \
 	  -e BACKEND_HOST=localhost:8080 \
-	  test_frontend:latest
+	  brovy/pandak8s-frontend:$(TAG)

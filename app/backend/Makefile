@@ -11,4 +11,4 @@ run-local:
 	  -v $$HOME/.kube:/root/.kube:ro \
 	  -e KUBECONFIG=/root/.kube/config \
 	  -p 8080:8080 \
-	  test_backend:latest
+	  brovy/pandak8s-backend:$(TAG)
