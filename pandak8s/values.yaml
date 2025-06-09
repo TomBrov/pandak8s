@@ -6,6 +6,7 @@ ingress-nginx:
       annotations:
         service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
         service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+        service.beta.kubernetes.io/disable-ssl: "true"
     ingressClass: nginx
     ingressClassResource:
       name: nginx
@@ -15,7 +16,9 @@ ingress:
   className: nginx
   host: test.vicarius.xyz
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: test.vicarius.xyz
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "false"
 
 
 frontend:
