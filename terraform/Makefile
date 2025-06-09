@@ -1,4 +1,4 @@
-REGION ?= us-east-2
+REGION ?= us-east-1
 CLUSTER_NAME ?= barkuni-pandak8s-cluster
 VAR_FILE ?= envs/dev.tfvars
 
