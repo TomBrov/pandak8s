@@ -4,4 +4,9 @@ metadata:
   name: {{ .Values.backend.rbac.readonlyRole.name }}
   namespace: {{ .Values.backend.rbac.readonlyRole.namespace }}
 rules:
-{{ toYaml .Values.backend.rbac.fullAccessRole.rules | indent 4 }}
+  - apiGroups: [""]
+    resources: ["pods", "services"]
+    verbs: ["get", "list"]
+  - apiGroups: ["apps"]
+    resources: ["deployments"]
+    verbs: ["get", "list"]

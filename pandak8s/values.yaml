@@ -52,24 +52,10 @@ backend:
     enabled: true
     fullAccessRole:
       name: backend-full-access
-      rules:
-        - apiGroups: [""]
-          resources: ["pods", "services"]
-          verbs: ["get", "list", "create", "update", "delete"]
-        - apiGroups: ["apps"]
-          resources: ["deployments"]
-          verbs: ["get", "list", "create", "update", "delete"]
     fullAccessBinding:
       name: backend-clusterrole-binding
     readonlyRole:
       name: backend-readonly
       namespace: kube-system
-      rules:
-        - apiGroups: [""]
-          resources: ["pods", "services"]
-          verbs: ["get", "list"]
-        - apiGroups: ["apps"]
-          resources: ["deployments"]
-          verbs: ["get", "list"]
     readonlyBinding:
       name: backend-readonly-binding
