@@ -16,4 +16,7 @@ public_subnets = [
 ]
 
 repo_url = "https://github.com/TomBrov/pandak8s.git"
+github_org = "TomBrov"
+github_repo = "pandak8s"
+github_branch = "main"
 

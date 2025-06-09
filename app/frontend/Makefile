@@ -11,3 +11,9 @@ run-local:
 	  -p 8900:80 \
 	  -e BACKEND_HOST=localhost:8080 \
 	  brovy/pandak8s-frontend:$(TAG)
+
+build-ci:
+	docker build -t $(REGISTRY)/$(PRODUCT)-$(SERVICE):$(TAG) .
+
+push-ci:
+	docker push $(REGISTRY)/$(PRODUCT)-$(SERVICE):$(TAG)

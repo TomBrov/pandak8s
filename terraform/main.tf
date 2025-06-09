@@ -44,20 +44,8 @@ module "vpc" {
   }
 }
 
-resource "aws_ecr_repository" "pandak8s-web" {
-  name = "pandak8s-web"
-  image_tag_mutability = "IMMUTABLE"
-  force_delete = true
-}
-
-resource "aws_ecr_repository" "pandak8s-api" {
-  name = "pandak8s-api"
-  image_tag_mutability = "IMMUTABLE"
-  force_delete = true
-}
-
 module "eks" {
-  depends_on = [module.vpc, aws_ecr_repository.pandak8s-api, aws_ecr_repository.pandak8s-web]
+  depends_on = [module.vpc]
   source  = "terraform-aws-modules/eks/aws"
   version = "20.8.4"
 
@@ -111,6 +99,14 @@ module "eks_aws_auth" {
       groups   = ["system:masters"]
     }
   ]
+}
+
+module "github_action" {
+  source = "./modules/github-action"
+  aws_region = var.region
+  github_org = var.github_org
+  github_repo = var.github_repo
+  github_branch = var.github_branch
 }
 
 resource "helm_release" "argocd" {

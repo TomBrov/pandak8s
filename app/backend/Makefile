@@ -12,3 +12,9 @@ run-local:
 	  -e KUBECONFIG=/root/.kube/config \
 	  -p 8080:8080 \
 	  brovy/pandak8s-backend:$(TAG)
+
+build-ci:
+	docker build -t $(REGISTRY)/$(PRODUCT)-$(SERVICE):$(TAG) .
+
+push-ci:
+	docker push $(REGISTRY)/$(PRODUCT)-$(SERVICE):$(TAG)

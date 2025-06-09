@@ -13,3 +13,7 @@ output "private_subnets" {
 output "public_subnets" {
   value = module.vpc.public_subnets
 }
+
+output "github_role" {
+  value = module.github_action.github_role_arn
+}

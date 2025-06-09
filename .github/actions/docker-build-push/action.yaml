@@ -1,24 +1,42 @@
 name: docker-build-push
-author: tomb
-description: docker-build-push
+description: Builds and pushes a Docker image to ECR using make targets
+
 inputs:
-  tag:
-    description: Tag for the image
+  registry:
+    description: ECR registry URL
     required: true
-    default: latest
+
+  product_name:
+    description: Product name
+    required: true
+
   service:
-    description: Service name to use for the image
+    description: Service name
     required: true
-    default: frontend
+
+  tag:
+    description: Docker tag
+    required: true
+
 runs:
   using: composite
   steps:
-    - name: Build Docker Image
+    - name: Build Docker Image (make build-ci)
       working-directory: app/${{ inputs.service }}
       shell: bash
-      run: make TAG=${{ inputs.tag }} build
+      run: |
+        make build-ci \
+          REGISTRY=${{ inputs.registry }} \
+          PRODUCT=${{ inputs.product_name }} \
+          SERVICE=${{ inputs.service }} \
+          TAG=${{ inputs.tag }}
 
-    - name: Push Docker Image
+    - name: Push Docker Image (make push-ci)
       working-directory: app/${{ inputs.service }}
       shell: bash
-      run: make TAG=${{ inputs.tag }} push
+      run: |
+        make push-ci \
+          REGISTRY=${{ inputs.registry }} \
+          PRODUCT=${{ inputs.product_name }} \
+          SERVICE=${{ inputs.service }} \
+          TAG=${{ inputs.tag }}
