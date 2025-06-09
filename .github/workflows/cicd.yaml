@@ -20,9 +20,9 @@ jobs:
         with:
           filters: |
             frontend:
-              - 'app/frontend/**'
+              - 'app/web/**'
             backend:
-              - 'app/backend/**'
+              - 'app/api/**'
 
       - name: Generate matrix
         id: matrix
@@ -31,12 +31,12 @@ jobs:
           
           if [[ "${{ steps.filter.outputs.frontend }}" == 'true' ]]; then
             echo "Frontend has changed"
-            changed+=("\"frontend\"")
+            changed+=("\"web\"")
           fi
           
           if [[ "${{ steps.filter.outputs.backend }}" == 'true' ]]; then
             echo "Backend has changed"
-            changed+=("\"backend\"")
+            changed+=("\"api\"")
           fi
           
           json="[$(IFS=,; echo "${changed[*]}")]"
