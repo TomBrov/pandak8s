@@ -125,7 +125,7 @@ resource "kubernetes_manifest" "app-pandak8s" {
     apiVersion = "argoproj.io/v1alpha1"
     kind       = "Application"
     metadata = {
-      name      = "app-pandak8s"
+      name      = "pandak8s"
       namespace = "argocd"
     }
     spec = {
