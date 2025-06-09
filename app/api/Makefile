@@ -16,5 +16,6 @@ run-local:
 build-ci:
 	docker build -t $(REGISTRY)/$(PRODUCT)-$(SERVICE):$(TAG) .
 
+
 push-ci:
 	docker push $(REGISTRY)/$(PRODUCT)-$(SERVICE):$(TAG)
