@@ -45,7 +45,7 @@ Vicarius/
 3. Application is deployed to EKS cluster
 
 ## Cloud Architecture Diagram
-![Cloud Architecture Diagram](docs/cloud_architecture.png)
+![Cloud Architecture Diagram](./docs/cloud_architecture.png)
 This diagram illustrates the AWS infrastructure deployed in the us-east-1 region.
 - VPC: A dedicated Virtual Private Cloud named barkuni-pandak8s-vpc spans across multiple Availability Zones (AZs): us-east-1a, us-east-1b, and us-east-1c.
 - Public and Private Subnets: Each AZ contains both public and private subnets. Public subnets are used for the NAT Gateway and Load Balancer, while private subnets host the EKS worker nodes.
@@ -56,7 +56,7 @@ This diagram illustrates the AWS infrastructure deployed in the us-east-1 region
 - EKS Nodes: Represented as T2 instances within the private subnets; they run the actual application workloads (pods).
 
 ## k8s Architecture Diagram
-![Cloud Architecture Diagram](docs/k8s_architecture.png)
+![Cloud Architecture Diagram](./docs/k8s_architecture.png)
 This diagram describes the internal Kubernetes architecture running on EKS.
 - Control Plane:
     - API Server: Central management point for the Kubernetes cluster.
