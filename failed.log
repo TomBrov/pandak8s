@@ -1,0 +1,109 @@
+#18 [installer 5/7] COPY apps/frontend/turbo.json apps/frontend/vite.config.ts .
+#18 DONE 0.1s
+#19 [installer 6/7] RUN npm install
+#19 5.950 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#19 6.642 npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+#19 7.456 npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+#19 12.83 npm warn deprecated @aws-sdk/querystring-builder@3.374.0: This package has moved to @smithy/querystring-builder
+#19 13.22 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 13.88 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 14.00 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 14.76 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 23.93 
+#19 23.93 > 1337-jupiter-monorepo@1.20.0 prepare
+#19 23.93 > husky
+#19 23.93 
+#19 23.96 .git can't be found
+#19 23.99 added 1921 packages, and audited 1926 packages in 24s
+#19 23.99 
+#19 23.99 422 packages are looking for funding
+#19 23.99   run `npm fund` for details
+#19 24.00 
+#19 24.00 4 moderate severity vulnerabilities
+#19 24.00 
+#19 24.00 To address all issues (including breaking changes), run:
+#19 24.00   npm audit fix --force
+#19 24.00 
+#19 24.00 Run `npm audit` for details.
+#19 DONE 44.2s
+#20 [installer 7/7] RUN npx turbo build --filter=frontend
+#20 0.515 
+#20 0.515 Attention:
+#20 0.515 Turborepo now collects completely anonymous telemetry regarding usage.
+#20 0.515 This information is used to shape the Turborepo roadmap and prioritize features.
+#20 0.515 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#20 0.515 https://turborepo.com/docs/telemetry
+#20 0.515 
+#20 0.516 turbo 2.5.4
+#20 0.516 
+#20 0.567 • Packages in scope: frontend
+#20 0.567 • Running build in 1 packages
+#20 0.567 • Remote caching disabled
+#20 0.617 @libraries/shared-core:build: cache miss, executing 9efd63af7ef7a667
+#20 0.729 @libraries/shared-core:build: 
+#20 0.729 @libraries/shared-core:build: > @libraries/shared-core@1.0.0 build
+#20 0.729 @libraries/shared-core:build: > tsc -p tsconfig.lib.json
+#20 0.729 @libraries/shared-core:build: 
+#20 3.488 frontend:build: cache miss, executing f38c8090c06baea9
+#20 3.602 frontend:build: 
+#20 3.602 frontend:build: > frontend@1.0.0 build
+#20 3.602 frontend:build: > vite build --config vite.config.ts
+#20 3.602 frontend:build: 
+#20 3.776 frontend:build: The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+#20 3.812 frontend:build: vite v5.4.19 building for production...
+#20 3.986 frontend:build: transforming...
+#20 14.31 frontend:build: ✓ 2698 modules transformed.
+#20 14.32 frontend:build: x Build failed in 10.48s
+#20 14.32 frontend:build: error during build:
+#20 14.32 frontend:build: [vite]: Rollup failed to resolve import "@radix-ui/react-radio-group" from "/app/apps/frontend/src/components/groundOrg/priorityPolygonForm/RadioButtonGroupField.tsx".
+#20 14.32 frontend:build: This is most likely unintended because it can break your application at runtime.
+#20 14.32 frontend:build: If you do want to externalize this module explicitly add it to
+#20 14.32 frontend:build: `build.rollupOptions.external`
+#20 14.32 frontend:build:     at viteWarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
+#20 14.32 frontend:build:     at onwarn (/app/node_modules/@vitejs/plugin-react/dist/index.cjs:120:9)
+#20 14.32 frontend:build:     at onRollupWarning (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
+#20 14.32 frontend:build:     at onwarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
+#20 14.32 frontend:build:     at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20798:13
+#20 14.32 frontend:build:     at Object.logger [as onLog] (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:22664:9)
+#20 14.32 frontend:build:     at ModuleLoader.handleInvalidResolvedId (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21410:26)
+#20 14.32 frontend:build:     at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21368:26
+#20 14.41 frontend:build: npm error Lifecycle script `build` failed with error:
+#20 14.41 frontend:build: npm error code 1
+#20 14.41 frontend:build: npm error path /app/apps/frontend
+#20 14.41 frontend:build: npm error workspace frontend@1.0.0
+#20 14.41 frontend:build: npm error location /app/apps/frontend
+#20 14.42 frontend:build: npm error command failed
+#20 14.42 frontend:build: npm error command sh -c vite build --config vite.config.ts
+#20 14.42 frontend:build: ERROR: command finished with error: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+#20 14.42 frontend#build: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+#20 14.42 
+#20 14.42  Tasks:    1 successful, 2 total
+#20 14.42 Cached:    0 cached, 2 total
+#20 14.42   Time:    13.901s 
+#20 14.42 Failed:    frontend#build
+#20 14.42 
+#20 14.43  ERROR  run failed: command  exited (1)
+#20 ERROR: process "/bin/sh -c npx turbo build --filter=frontend" did not complete successfully: exit code: 1
+------
+ > [installer 7/7] RUN npx turbo build --filter=frontend:
+14.42 frontend:build: npm error command sh -c vite build --config vite.config.ts
+14.42 frontend:build: ERROR: command finished with error: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+14.42 frontend#build: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+14.42 
+14.42  Tasks:    1 successful, 2 total
+14.42 Cached:    0 cached, 2 total
+14.42   Time:    13.901s 
+14.42 Failed:    frontend#build
+14.42 
+14.43  ERROR  run failed: command  exited (1)
+------
+frontend.dockerfile:39
+--------------------
+  37 |     COPY apps/frontend/turbo.json apps/frontend/vite.config.ts .
+  38 |     RUN npm install
+  39 | >>> RUN npx turbo build --filter=frontend
+  40 |     
+  41 |     # Stage 3: Runner
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npx turbo build --filter=frontend" did not complete successfully: exit code: 1
+Error: Process completed with exit code 1.
