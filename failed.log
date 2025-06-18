@@ -1,102 +1,270 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from frontend.dockerfile
+#1 transferring dockerfile: 1.58kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:21-slim
+#2 ...
+
+#3 [internal] load metadata for docker.io/library/nginx:1.25.4-alpine3.18
+#3 DONE 1.7s
+
+#2 [internal] load metadata for docker.io/library/node:21-slim
+#2 DONE 1.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 110B done
+#4 DONE 0.0s
+
+#5 [base 1/2] FROM docker.io/library/node:21-slim@sha256:dfc05dee209a1d7adf2ef189bd97396daad4e97c6eaa85778d6f75205ba1b0fb
+#5 resolve docker.io/library/node:21-slim@sha256:dfc05dee209a1d7adf2ef189bd97396daad4e97c6eaa85778d6f75205ba1b0fb 0.0s done
+#5 sha256:dfc05dee209a1d7adf2ef189bd97396daad4e97c6eaa85778d6f75205ba1b0fb 1.21kB / 1.21kB done
+#5 sha256:99afef5df7400a8d118e0504576d32ca700de5034c4f9271d2ff7c91cc12d170 1.37kB / 1.37kB done
+#5 sha256:539323daf9223d688d5eecd825ec81810d5d875124023d0659b273b0d364cbc1 7.69kB / 7.69kB done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 12.72MB 0.2s done
+#6 DONE 0.3s
+
+#7 [stage-3 1/9] FROM docker.io/library/nginx:1.25.4-alpine3.18@sha256:31bad00311cb5eeb8a6648beadcf67277a175da89989f14727420a80e2e76742
+#7 resolve docker.io/library/nginx:1.25.4-alpine3.18@sha256:31bad00311cb5eeb8a6648beadcf67277a175da89989f14727420a80e2e76742 0.0s done
+#7 sha256:31bad00311cb5eeb8a6648beadcf67277a175da89989f14727420a80e2e76742 8.71kB / 8.71kB done
+#7 sha256:cb3218c8a053881bd00f4fa93e9f87e2c6204761e391b3aafc942f104362e538 2.50kB / 2.50kB done
+#7 sha256:e289a478ace02cd72f0a71a5b2ec0594495e1fae85faa10aae3b0da530812608 11.74kB / 11.74kB done
+#7 sha256:ed3e62e73b33c9cfa4b253060771e4a9eebb751ab438052f197e847b4553a9ac 1.90MB / 1.90MB 0.2s done
+#7 sha256:5126dce06df729f9a22956013e160f8b581d47095beec332d647a5c1119b2411 629B / 629B 0.3s done
+#7 sha256:619be1103602d98e1963557998c954c892b3872986c27365e9f651f5bc27cab8 0B / 3.40MB 0.4s
+#7 sha256:1d0dd2dc2265a581798226f7c79d134ac797f42db3f934dd4af1d38a6b89ce5c 0B / 957B 0.5s
+#7 sha256:2b1ab92f023179da00446365a60daa60d72a1edeb697fb81811e086eba2e0170 0B / 392B 0.5s
+#7 sha256:619be1103602d98e1963557998c954c892b3872986c27365e9f651f5bc27cab8 3.40MB / 3.40MB 0.5s done
+#7 sha256:1d0dd2dc2265a581798226f7c79d134ac797f42db3f934dd4af1d38a6b89ce5c 957B / 957B 0.5s done
+#7 sha256:2b1ab92f023179da00446365a60daa60d72a1edeb697fb81811e086eba2e0170 392B / 392B 0.5s done
+#7 extracting sha256:619be1103602d98e1963557998c954c892b3872986c27365e9f651f5bc27cab8 0.1s done
+#7 sha256:6eba808ac059320c42179a6590b021f8695d3f12c2afa8745e219f635acf19d4 0B / 1.21kB 0.6s
+#7 sha256:eec94c9845c062c9f3495ce861d2bd9507bd7a13710de6b89a195a6b089ea8a7 0B / 12.65MB 0.6s
+#7 sha256:57038e85fbb88e96e34a84b125e568f540437561adb363fa791ff9e94e153dc1 0B / 1.40kB 0.6s
+#7 sha256:6eba808ac059320c42179a6590b021f8695d3f12c2afa8745e219f635acf19d4 1.21kB / 1.21kB 0.6s done
+#7 sha256:57038e85fbb88e96e34a84b125e568f540437561adb363fa791ff9e94e153dc1 1.40kB / 1.40kB 0.7s done
+#7 extracting sha256:ed3e62e73b33c9cfa4b253060771e4a9eebb751ab438052f197e847b4553a9ac 0.1s
+#7 sha256:eec94c9845c062c9f3495ce861d2bd9507bd7a13710de6b89a195a6b089ea8a7 12.65MB / 12.65MB 0.8s done
+#7 extracting sha256:ed3e62e73b33c9cfa4b253060771e4a9eebb751ab438052f197e847b4553a9ac 0.2s done
+#7 extracting sha256:5126dce06df729f9a22956013e160f8b581d47095beec332d647a5c1119b2411 done
+#7 extracting sha256:1d0dd2dc2265a581798226f7c79d134ac797f42db3f934dd4af1d38a6b89ce5c done
+#7 extracting sha256:2b1ab92f023179da00446365a60daa60d72a1edeb697fb81811e086eba2e0170
+#7 extracting sha256:2b1ab92f023179da00446365a60daa60d72a1edeb697fb81811e086eba2e0170 done
+#7 extracting sha256:6eba808ac059320c42179a6590b021f8695d3f12c2afa8745e219f635acf19d4 done
+#7 extracting sha256:57038e85fbb88e96e34a84b125e568f540437561adb363fa791ff9e94e153dc1 done
+#7 extracting sha256:eec94c9845c062c9f3495ce861d2bd9507bd7a13710de6b89a195a6b089ea8a7
+#7 extracting sha256:eec94c9845c062c9f3495ce861d2bd9507bd7a13710de6b89a195a6b089ea8a7 0.4s done
+#7 DONE 1.8s
+
+#5 [base 1/2] FROM docker.io/library/node:21-slim@sha256:dfc05dee209a1d7adf2ef189bd97396daad4e97c6eaa85778d6f75205ba1b0fb
+#5 sha256:09f376ebb190216b0459f470e71bec7b5dfa611d66bf008492b40dcc5f1d8eae 29.15MB / 29.15MB 1.0s done
+#5 sha256:44f5fe9df22b4c549ef3e662bd64e1e6edb8d3738224047ce56d83ab2f498943 3.35kB / 3.35kB 1.0s done
+#5 sha256:9f1c458e7f2d5d570229bfeedfc0b1701e008a3a2920e95d0cb6b676e62b987b 42.25MB / 42.25MB 1.4s done
+#5 extracting sha256:09f376ebb190216b0459f470e71bec7b5dfa611d66bf008492b40dcc5f1d8eae 0.7s
+#5 sha256:2e82ac84e1512655a99357cfdf7916a8f67a7d47c7c2314bf2172861c00abd72 1.71MB / 1.71MB 1.2s done
+#5 sha256:30e51537f486caf3878e63f3dc6038db0a6abf5698ab86bd2080be44287f55e3 452B / 452B 1.2s done
+#5 extracting sha256:09f376ebb190216b0459f470e71bec7b5dfa611d66bf008492b40dcc5f1d8eae 1.2s done
+#5 extracting sha256:44f5fe9df22b4c549ef3e662bd64e1e6edb8d3738224047ce56d83ab2f498943
+#5 extracting sha256:44f5fe9df22b4c549ef3e662bd64e1e6edb8d3738224047ce56d83ab2f498943 done
+#5 extracting sha256:9f1c458e7f2d5d570229bfeedfc0b1701e008a3a2920e95d0cb6b676e62b987b
+#5 extracting sha256:9f1c458e7f2d5d570229bfeedfc0b1701e008a3a2920e95d0cb6b676e62b987b 1.2s done
+#5 extracting sha256:2e82ac84e1512655a99357cfdf7916a8f67a7d47c7c2314bf2172861c00abd72
+#5 extracting sha256:2e82ac84e1512655a99357cfdf7916a8f67a7d47c7c2314bf2172861c00abd72 0.1s done
+#5 extracting sha256:30e51537f486caf3878e63f3dc6038db0a6abf5698ab86bd2080be44287f55e3 done
+#5 DONE 3.8s
+
+#8 [stage-3 2/9] RUN apk add --no-cache bash
+#8 0.295 fetch https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/APKINDEX.tar.gz
+#8 0.692 fetch https://dl-cdn.alpinelinux.org/alpine/v3.18/community/x86_64/APKINDEX.tar.gz
+#8 1.019 (1/2) Installing readline (8.2.1-r1)
+#8 1.062 (2/2) Installing bash (5.2.15-r5)
+#8 1.115 Executing bash-5.2.15-r5.post-install
+#8 1.117 Executing busybox-1.36.1-r5.trigger
+#8 1.121 OK: 47 MiB in 66 packages
+#8 DONE 2.2s
+
+#9 [base 2/2] RUN npm install -g turbo@2.5.4
+#9 1.280 
+#9 1.280 added 2 packages in 857ms
+#9 1.280 npm notice 
+#9 1.280 npm notice New major version of npm available! 10.5.0 -> 11.4.2
+#9 1.280 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v11.4.2>
+#9 1.281 npm notice Run `npm install -g npm@11.4.2` to update!
+#9 1.281 npm notice 
+#9 DONE 1.5s
+
+#10 [builder 1/5] WORKDIR /app
+#10 DONE 0.1s
+
+#11 [builder 2/5] COPY apps/frontend ./apps/frontend
+#11 DONE 0.2s
+
+#12 [builder 3/5] COPY libs ./libs
+#12 DONE 0.1s
+
+#13 [builder 4/5] COPY package.json package-lock.json ./
+#13 DONE 0.1s
+
+#14 [builder 5/5] RUN turbo prune frontend --docker
+#14 0.293  WARNING  No locally installed `turbo` found. Using version: 2.5.4.
+#14 0.295 
+#14 0.295 Attention:
+#14 0.295 Turborepo now collects completely anonymous telemetry regarding usage.
+#14 0.295 This information is used to shape the Turborepo roadmap and prioritize features.
+#14 0.295 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#14 0.295 https://turborepo.com/docs/telemetry
+#14 0.295 
+#14 0.296 turbo 2.5.4
+#14 0.296 
+#14 0.355 Generating pruned monorepo for frontend in /app/out
+#14 0.357  - Added @libraries/eslint-config
+#14 0.360  - Added @libraries/shared-core
+#14 0.360  - Added @libraries/typescript-config
+#14 0.412  - Added frontend
+#14 DONE 0.6s
+
+#15 [installer 2/7] COPY --from=builder /app/out/json/ .
+#15 DONE 0.1s
+
+#16 [installer 3/7] COPY --from=builder /app/out/full/ .
+#16 DONE 0.3s
+
+#17 [installer 4/7] COPY .npmrc .
+#17 DONE 0.1s
+
 #18 [installer 5/7] COPY apps/frontend/turbo.json apps/frontend/vite.config.ts .
 #18 DONE 0.1s
+
 #19 [installer 6/7] RUN npm install
-#19 5.950 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-#19 6.642 npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
-#19 7.456 npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
-#19 12.83 npm warn deprecated @aws-sdk/querystring-builder@3.374.0: This package has moved to @smithy/querystring-builder
-#19 13.22 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-#19 13.88 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-#19 14.00 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-#19 14.76 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-#19 23.93 
-#19 23.93 > 1337-jupiter-monorepo@1.20.0 prepare
-#19 23.93 > husky
-#19 23.93 
-#19 23.96 .git can't be found
-#19 23.99 added 1921 packages, and audited 1926 packages in 24s
-#19 23.99 
-#19 23.99 422 packages are looking for funding
-#19 23.99   run `npm fund` for details
-#19 24.00 
-#19 24.00 4 moderate severity vulnerabilities
-#19 24.00 
-#19 24.00 To address all issues (including breaking changes), run:
-#19 24.00   npm audit fix --force
-#19 24.00 
-#19 24.00 Run `npm audit` for details.
-#19 DONE 44.2s
+#19 1.406 npm WARN EBADENGINE Unsupported engine {
+#19 1.408 npm WARN EBADENGINE   package: 'lru-cache@11.1.0',
+#19 1.408 npm WARN EBADENGINE   required: { node: '20 || >=22' },
+#19 1.408 npm WARN EBADENGINE   current: { node: 'v21.7.3', npm: '10.5.0' }
+#19 1.408 npm WARN EBADENGINE }
+#19 17.03 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#19 17.54 npm WARN deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+#19 17.80 npm WARN deprecated @aws-sdk/querystring-builder@3.374.0: This package has moved to @smithy/querystring-builder
+#19 18.13 npm WARN deprecated domexception@4.0.0: Use your platform's native DOMException instead
+#19 18.95 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 19.20 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 19.20 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 19.21 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 40.77 
+#19 40.77 > 1337-jupiter-monorepo@1.20.0 prepare
+#19 40.77 > husky
+#19 40.77 
+#19 40.81 .git can't be found
+#19 40.83 added 1922 packages, and audited 1927 packages in 40s
+#19 40.83 
+#19 40.83 422 packages are looking for funding
+#19 40.83   run `npm fund` for details
+#19 40.85 
+#19 40.85 4 moderate severity vulnerabilities
+#19 40.85 
+#19 40.85 To address all issues (including breaking changes), run:
+#19 40.85   npm audit fix --force
+#19 40.85 
+#19 40.85 Run `npm audit` for details.
+#19 DONE 56.2s
+
 #20 [installer 7/7] RUN npx turbo build --filter=frontend
-#20 0.515 
-#20 0.515 Attention:
-#20 0.515 Turborepo now collects completely anonymous telemetry regarding usage.
-#20 0.515 This information is used to shape the Turborepo roadmap and prioritize features.
-#20 0.515 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-#20 0.515 https://turborepo.com/docs/telemetry
-#20 0.515 
-#20 0.516 turbo 2.5.4
-#20 0.516 
-#20 0.567 • Packages in scope: frontend
-#20 0.567 • Running build in 1 packages
-#20 0.567 • Remote caching disabled
-#20 0.617 @libraries/shared-core:build: cache miss, executing 9efd63af7ef7a667
-#20 0.729 @libraries/shared-core:build: 
-#20 0.729 @libraries/shared-core:build: > @libraries/shared-core@1.0.0 build
-#20 0.729 @libraries/shared-core:build: > tsc -p tsconfig.lib.json
-#20 0.729 @libraries/shared-core:build: 
-#20 3.488 frontend:build: cache miss, executing f38c8090c06baea9
-#20 3.602 frontend:build: 
-#20 3.602 frontend:build: > frontend@1.0.0 build
-#20 3.602 frontend:build: > vite build --config vite.config.ts
-#20 3.602 frontend:build: 
-#20 3.776 frontend:build: The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
-#20 3.812 frontend:build: vite v5.4.19 building for production...
-#20 3.986 frontend:build: transforming...
-#20 14.31 frontend:build: ✓ 2698 modules transformed.
-#20 14.32 frontend:build: x Build failed in 10.48s
-#20 14.32 frontend:build: error during build:
-#20 14.32 frontend:build: [vite]: Rollup failed to resolve import "@radix-ui/react-radio-group" from "/app/apps/frontend/src/components/groundOrg/priorityPolygonForm/RadioButtonGroupField.tsx".
-#20 14.32 frontend:build: This is most likely unintended because it can break your application at runtime.
-#20 14.32 frontend:build: If you do want to externalize this module explicitly add it to
-#20 14.32 frontend:build: `build.rollupOptions.external`
-#20 14.32 frontend:build:     at viteWarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
-#20 14.32 frontend:build:     at onwarn (/app/node_modules/@vitejs/plugin-react/dist/index.cjs:120:9)
-#20 14.32 frontend:build:     at onRollupWarning (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
-#20 14.32 frontend:build:     at onwarn (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
-#20 14.32 frontend:build:     at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:20798:13
-#20 14.32 frontend:build:     at Object.logger [as onLog] (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:22664:9)
-#20 14.32 frontend:build:     at ModuleLoader.handleInvalidResolvedId (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21410:26)
-#20 14.32 frontend:build:     at file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21368:26
-#20 14.41 frontend:build: npm error Lifecycle script `build` failed with error:
-#20 14.41 frontend:build: npm error code 1
-#20 14.41 frontend:build: npm error path /app/apps/frontend
-#20 14.41 frontend:build: npm error workspace frontend@1.0.0
-#20 14.41 frontend:build: npm error location /app/apps/frontend
-#20 14.42 frontend:build: npm error command failed
-#20 14.42 frontend:build: npm error command sh -c vite build --config vite.config.ts
-#20 14.42 frontend:build: ERROR: command finished with error: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
-#20 14.42 frontend#build: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
-#20 14.42 
-#20 14.42  Tasks:    1 successful, 2 total
-#20 14.42 Cached:    0 cached, 2 total
-#20 14.42   Time:    13.901s 
-#20 14.42 Failed:    frontend#build
-#20 14.42 
-#20 14.43  ERROR  run failed: command  exited (1)
+#20 0.631 
+#20 0.631 Attention:
+#20 0.631 Turborepo now collects completely anonymous telemetry regarding usage.
+#20 0.631 This information is used to shape the Turborepo roadmap and prioritize features.
+#20 0.631 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#20 0.631 https://turborepo.com/docs/telemetry
+#20 0.631 
+#20 0.634 turbo 2.5.4
+#20 0.634 
+#20 0.687 • Packages in scope: frontend
+#20 0.687 • Running build in 1 packages
+#20 0.687 • Remote caching disabled
+#20 0.736 @libraries/shared-core:build: cache miss, executing 9efd63af7ef7a667
+#20 0.939 @libraries/shared-core:build: 
+#20 0.939 @libraries/shared-core:build: > @libraries/shared-core@1.0.0 build
+#20 0.939 @libraries/shared-core:build: > tsc -p tsconfig.lib.json
+#20 0.939 @libraries/shared-core:build: 
+#20 3.743 frontend:build: cache miss, executing 23054cb84968a8ce
+#20 3.954 frontend:build: 
+#20 3.954 frontend:build: > frontend@1.0.0 build
+#20 3.954 frontend:build: > vite build --config vite.config.ts
+#20 3.954 frontend:build: 
+#20 4.115 frontend:build: The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+#20 4.150 frontend:build: vite v5.4.19 building for production...
+#20 4.310 frontend:build: transforming...
+#20 16.52 frontend:build: ✓ 4119 modules transformed.
+#20 16.53 frontend:build: x Build failed in 12.35s
+#20 16.53 frontend:build: error during build:
+#20 16.53 frontend:build: src/components/cameraManagement/manageCamera/ManageCameraButton.tsx (2:2): "ManageDevice" is not exported by "node_modules/@sky320-developers/1337-jupitzav-shared-frontend/dist/index.es.js", imported by "src/components/cameraManagement/manageCamera/ManageCameraButton.tsx".
+#20 16.53 frontend:build: file: /app/apps/frontend/src/components/cameraManagement/manageCamera/ManageCameraButton.tsx:2:2
+#20 16.53 frontend:build: 
+#20 16.53 frontend:build: 1: import {
+#20 16.53 frontend:build: 2:   ManageDevice,
+#20 16.53 frontend:build:      ^
+#20 16.53 frontend:build: 3:   useToastStore,
+#20 16.53 frontend:build: 4: } from '@sky320-developers/1337-jupitzav-shared-frontend';
+#20 16.53 frontend:build: 
+#20 16.53 frontend:build:     at getRollupError (file:///app/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+#20 16.53 frontend:build:     at error (file:///app/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+#20 16.53 frontend:build:     at Module.error (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:16807:16)
+#20 16.53 frontend:build:     at Module.traceVariable (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:17256:29)
+#20 16.53 frontend:build:     at ModuleScope.findVariable (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:14909:39)
+#20 16.53 frontend:build:     at ReturnValueScope.findVariable (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:5633:38)
+#20 16.53 frontend:build:     at FunctionBodyScope.findVariable (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:5633:38)
+#20 16.53 frontend:build:     at Identifier.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:5407:40)
+#20 16.53 frontend:build:     at CallExpression.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2794:28)
+#20 16.53 frontend:build:     at CallExpression.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:11994:15)
+#20 16.53 frontend:build:     at ReturnStatement.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2798:23)
+#20 16.53 frontend:build:     at BlockStatement.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2794:28)
+#20 16.53 frontend:build:     at ArrowFunctionExpression.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2798:23)
+#20 16.53 frontend:build:     at VariableDeclarator.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2798:23)
+#20 16.53 frontend:build:     at VariableDeclaration.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2794:28)
+#20 16.53 frontend:build:     at ExportNamedDeclaration.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:12494:27)
+#20 16.53 frontend:build:     at Program.bind (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:2794:28)
+#20 16.53 frontend:build:     at Module.bindReferences (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:16786:18)
+#20 16.53 frontend:build:     at Graph.sortModules (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:22564:20)
+#20 16.53 frontend:build:     at Graph.build (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:22462:14)
+#20 16.53 frontend:build:     at async file:///app/node_modules/rollup/dist/es/shared/node-entry.js:23150:13
+#20 16.53 frontend:build:     at async catchUnfinishedHookActions (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:22621:16)
+#20 16.53 frontend:build:     at async rollupInternal (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:23145:5)
+#20 16.53 frontend:build:     at async build (file:///app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65693:14)
+#20 16.53 frontend:build:     at async CAC.<anonymous> (file:///app/node_modules/vite/dist/node/cli.js:829:5)
+#20 16.59 frontend:build: npm ERR! Lifecycle script `build` failed with error: 
+#20 16.59 frontend:build: npm ERR! Error: command failed 
+#20 16.59 frontend:build: npm ERR!   in workspace: frontend@1.0.0 
+#20 16.59 frontend:build: npm ERR!   at location: /app/apps/frontend 
+#20 16.60 frontend:build: ERROR: command finished with error: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+#20 16.60 frontend#build: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+#20 16.60 
+#20 16.60  Tasks:    1 successful, 2 total
+#20 16.60 Cached:    0 cached, 2 total
+#20 16.60   Time:    15.967s 
+#20 16.60 Failed:    frontend#build
+#20 16.60 
+#20 16.61  ERROR  run failed: command  exited (1)
 #20 ERROR: process "/bin/sh -c npx turbo build --filter=frontend" did not complete successfully: exit code: 1
 ------
  > [installer 7/7] RUN npx turbo build --filter=frontend:
-14.42 frontend:build: npm error command sh -c vite build --config vite.config.ts
-14.42 frontend:build: ERROR: command finished with error: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
-14.42 frontend#build: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
-14.42 
-14.42  Tasks:    1 successful, 2 total
-14.42 Cached:    0 cached, 2 total
-14.42   Time:    13.901s 
-14.42 Failed:    frontend#build
-14.42 
-14.43  ERROR  run failed: command  exited (1)
+16.59 frontend:build: npm ERR!   at location: /app/apps/frontend 
+16.60 frontend:build: ERROR: command finished with error: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+16.60 frontend#build: command (/app/apps/frontend) /usr/local/bin/npm run build exited (1)
+16.60 
+16.60  Tasks:    1 successful, 2 total
+16.60 Cached:    0 cached, 2 total
+16.60   Time:    15.967s 
+16.60 Failed:    frontend#build
+16.60 
+16.61  ERROR  run failed: command  exited (1)
 ------
+
+ 2 warnings found (use docker --debug to expand):
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ARG "SHARED_TOKEN") (line 21)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "SHARED_TOKEN") (line 29)
 frontend.dockerfile:39
 --------------------
   37 |     COPY apps/frontend/turbo.json apps/frontend/vite.config.ts .
