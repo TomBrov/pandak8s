@@ -1,0 +1,336 @@
+#0 building with "default" instance using docker driver
+#1 [internal] load build definition from backend.dockerfile
+#1 transferring dockerfile: 1.47kB done
+#1 DONE 0.0s
+#2 [internal] load metadata for docker.io/library/node:22-alpine3.20
+#2 DONE 1.8s
+#3 [internal] load .dockerignore
+#3 transferring context: 110B done
+#3 DONE 0.0s
+#4 [base 1/2] FROM docker.io/library/node:22-alpine3.20@sha256:2289fb1fba0f4633b08ec47b94a89c7e20b829fc5679f9b7b298eaa2f1ed8b7e
+#4 resolve docker.io/library/node:22-alpine3.20@sha256:2289fb1fba0f4633b08ec47b94a89c7e20b829fc5679f9b7b298eaa2f1ed8b7e 0.0s done
+#4 sha256:35d1e2d251585b806c41f71d0933d7ba3afb6374ee3745523c2ae406480f6bc7 1.72kB / 1.72kB done
+#4 sha256:6b49ab3cd9c3c4f7d52aa86e5ebf9c55219b48707c9397a76141611345fe5c7b 6.21kB / 6.21kB done
+#4 sha256:0a9a5dfd008f05ebc27e4790db0709a29e527690c21bcbcd01481eaeb6bb49dc 0B / 3.63MB 0.1s
+#4 sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 0B / 51.06MB 0.1s
+#4 sha256:0c6d1cca32590d82bab0b754ec382d51e3404db6737b967cf0837d2964ef6029 0B / 1.39MB 0.1s
+#4 sha256:2289fb1fba0f4633b08ec47b94a89c7e20b829fc5679f9b7b298eaa2f1ed8b7e 6.43kB / 6.43kB done
+#4 sha256:0a9a5dfd008f05ebc27e4790db0709a29e527690c21bcbcd01481eaeb6bb49dc 3.63MB / 3.63MB 0.2s done
+#4 extracting sha256:0a9a5dfd008f05ebc27e4790db0709a29e527690c21bcbcd01481eaeb6bb49dc
+#4 sha256:82bea49235a67cfa65fc9a72aa287a09ee77e7b4f561791239b5862112e875c5 0B / 448B 0.3s
+#4 sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 11.53MB / 51.06MB 0.4s
+#4 sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 24.12MB / 51.06MB 0.5s
+#4 extracting sha256:0a9a5dfd008f05ebc27e4790db0709a29e527690c21bcbcd01481eaeb6bb49dc 0.2s done
+#4 sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 42.99MB / 51.06MB 0.6s
+#4 sha256:0c6d1cca32590d82bab0b754ec382d51e3404db6737b967cf0837d2964ef6029 1.39MB / 1.39MB 0.5s done
+#4 sha256:82bea49235a67cfa65fc9a72aa287a09ee77e7b4f561791239b5862112e875c5 448B / 448B 0.5s done
+#4 ...
+#5 [internal] load build context
+#5 transferring context: 87.65MB 0.8s done
+#5 DONE 0.8s
+#4 [base 1/2] FROM docker.io/library/node:22-alpine3.20@sha256:2289fb1fba0f4633b08ec47b94a89c7e20b829fc5679f9b7b298eaa2f1ed8b7e
+#4 sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 51.06MB / 51.06MB 0.7s done
+#4 extracting sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 0.1s
+#4 extracting sha256:ba4caef5715cce5e7de0253509b9ce257994ec6f40fd8e86f0d3846296ea3675 1.2s done
+#4 extracting sha256:0c6d1cca32590d82bab0b754ec382d51e3404db6737b967cf0837d2964ef6029
+#4 extracting sha256:0c6d1cca32590d82bab0b754ec382d51e3404db6737b967cf0837d2964ef6029 0.1s done
+#4 extracting sha256:82bea49235a67cfa65fc9a72aa287a09ee77e7b4f561791239b5862112e875c5 done
+#4 DONE 2.3s
+#6 [base 2/2] RUN npm install -g turbo@2.5.4
+#6 1.411 
+#6 1.411 added 2 packages in 1s
+#6 1.412 npm notice
+#6 1.412 npm notice New major version of npm available! 10.9.2 -> 11.4.2
+#6 1.412 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+#6 1.412 npm notice To update run: npm install -g npm@11.4.2
+#6 1.412 npm notice
+#6 DONE 2.2s
+#7 [pruner 1/3] WORKDIR /app
+#7 DONE 0.1s
+#8 [runner 1/9] WORKDIR /home/node/app
+#8 DONE 0.1s
+#9 [runner 2/9] RUN apk add --no-cache libssl3 dumb-init ffmpeg bash
+#9 ...
+#10 [pruner 2/3] COPY . .
+#10 DONE 0.2s
+#11 [pruner 3/3] RUN turbo prune --docker --scope=backend
+#11 0.364  WARNING  No locally installed `turbo` found. Using version: 2.5.4.
+#11 0.368 
+#11 0.368 Attention:
+#11 0.368 Turborepo now collects completely anonymous telemetry regarding usage.
+#11 0.368 This information is used to shape the Turborepo roadmap and prioritize features.
+#11 0.368 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#11 0.368 https://turborepo.com/docs/telemetry
+#11 0.368 
+#11 0.369 turbo 2.5.4
+#11 0.369 
+#11 0.498 Generating pruned monorepo for backend in /app/out
+#11 0.506  - Added @libraries/backend-common
+#11 0.508  - Added @libraries/eslint-config
+#11 0.519  - Added @libraries/prisma-client
+#11 0.523  - Added @libraries/shared-core
+#11 0.525  - Added @libraries/typescript-config
+#11 0.561  - Added backend
+#11 DONE 0.8s
+#9 [runner 2/9] RUN apk add --no-cache libssl3 dumb-init ffmpeg bash
+#9 0.489 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#9 0.918 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#9 1.234 (1/112) Installing ncurses-terminfo-base (6.4_p20240420-r2)
+#9 1.286 (2/112) Installing libncursesw (6.4_p20240420-r2)
+#9 1.340 (3/112) Installing readline (8.2.10-r0)
+#9 ...
+#12 [builder 2/7] COPY --from=pruner /app/out/json/ .
+#12 DONE 0.1s
+#9 [runner 2/9] RUN apk add --no-cache libssl3 dumb-init ffmpeg bash
+#9 1.391 (4/112) Installing bash (5.2.26-r0)
+#9 1.458 Executing bash-5.2.26-r0.post-install
+#9 1.460 (5/112) Installing dumb-init (1.2.5-r3)
+#9 1.510 (6/112) Installing libSvtAv1Enc (2.0.0-r1)
+#9 1.629 (7/112) Installing aom-libs (3.9.1-r0)
+#9 1.734 (8/112) Installing libxau (1.0.11-r4)
+#9 1.786 (9/112) Installing libmd (1.1.0-r0)
+#9 1.836 (10/112) Installing libbsd (0.12.2-r0)
+#9 1.885 (11/112) Installing libxdmcp (1.1.5-r1)
+#9 1.934 (12/112) Installing libxcb (1.16.1-r0)
+#9 1.994 (13/112) Installing libx11 (1.8.9-r1)
+#9 2.068 (14/112) Installing hwdata-pci (0.382-r0)
+#9 2.126 (15/112) Installing libpciaccess (0.18.1-r0)
+#9 2.175 (16/112) Installing libdrm (2.4.120-r0)
+#9 2.230 (17/112) Installing libxext (1.3.6-r2)
+#9 2.279 (18/112) Installing libxfixes (6.0.1-r4)
+#9 2.329 (19/112) Installing libffi (3.4.6-r0)
+#9 2.377 (20/112) Installing wayland-libs-client (1.22.0-r4)
+#9 2.427 (21/112) Installing libva (2.21.0-r0)
+#9 2.480 (22/112) Installing libvdpau (1.5-r3)
+#9 2.531 (23/112) Installing onevpl-libs (2023.3.1-r2)
+#9 2.583 (24/112) Installing ffmpeg-libavutil (6.1.1-r8)
+#9 2.643 (25/112) Installing libdav1d (1.4.2-r0)
+#9 2.710 (26/112) Installing openexr-libiex (3.1.13-r1)
+#9 2.763 (27/112) Installing openexr-libilmthread (3.1.13-r1)
+#9 2.813 (28/112) Installing imath (3.1.12-r0)
+#9 2.865 (29/112) Installing openexr-libopenexr (3.1.13-r1)
+#9 2.948 (30/112) Installing brotli-libs (1.1.0-r2)
+#9 3.007 (31/112) Installing giflib (5.2.2-r0)
+#9 3.057 (32/112) Installing libhwy (1.0.7-r0)
+#9 3.107 (33/112) Installing libjpeg-turbo (3.0.3-r0)
+#9 3.161 (34/112) Installing lcms2 (2.16-r0)
+#9 3.214 (35/112) Installing libpng (1.6.44-r0)
+#9 3.266 (36/112) Installing libjxl (0.10.2-r0)
+#9 3.358 (37/112) Installing lame-libs (3.100-r5)
+#9 3.410 (38/112) Installing opus (1.5.2-r0)
+#9 3.466 (39/112) Installing rav1e-libs (0.7.1-r0)
+#9 3.530 (40/112) Installing libgomp (13.2.1_git20240309-r1)
+#9 3.582 (41/112) Installing soxr (0.1.3-r7)
+#9 3.633 (42/112) Installing ffmpeg-libswresample (6.1.1-r8)
+#9 3.683 (43/112) Installing libogg (1.3.5-r5)
+#9 3.732 (44/112) Installing libtheora (1.1.1-r18)
+#9 3.790 (45/112) Installing libvorbis (1.3.7-r2)
+#9 3.846 (46/112) Installing libvpx (1.14.1-r0)
+#9 3.924 (47/112) Installing libsharpyuv (1.3.2-r0)
+#9 3.974 (48/112) Installing libwebp (1.3.2-r0)
+#9 4.027 (49/112) Installing libwebpmux (1.3.2-r0)
+#9 4.082 (50/112) Installing x264-libs (0.164_git20231001-r0)
+#9 4.180 (51/112) Installing numactl (2.0.18-r0)
+#9 4.230 (52/112) Installing x265-libs (3.6-r0)
+#9 4.389 (53/112) Installing xvidcore (1.3.7-r2)
+#9 4.443 (54/112) Installing ffmpeg-libavcodec (6.1.1-r8)
+#9 4.638 (55/112) Installing sdl2 (2.28.5-r1)
+#9 4.736 (56/112) Installing alsa-lib (1.2.11-r0)
+#9 4.798 (57/112) Installing libexpat (2.7.0-r0)
+#9 4.848 (58/112) Installing libbz2 (1.0.8-r6)
+#9 4.897 (59/112) Installing freetype (2.13.2-r0)
+#9 4.952 (60/112) Installing fontconfig (2.15.0-r1)
+#9 5.009 (61/112) Installing fribidi (1.0.15-r0)
+#9 5.059 (62/112) Installing libintl (0.22.5-r0)
+#9 5.109 (63/112) Installing libeconf (0.6.3-r0)
+#9 5.158 (64/112) Installing libblkid (2.40.1-r1)
+#9 5.210 (65/112) Installing libmount (2.40.1-r1)
+#9 5.264 (66/112) Installing pcre2 (10.43-r0)
+#9 5.325 (67/112) Installing glib (2.80.5-r0)
+#9 5.469 (68/112) Installing graphite2 (1.3.14-r6)
+#9 5.522 (69/112) Installing harfbuzz (8.5.0-r0)
+#9 5.585 (70/112) Installing libunibreak (6.1-r0)
+#9 5.636 (71/112) Installing libass (0.17.2-r0)
+#9 5.686 (72/112) Installing libbluray (1.3.4-r1)
+#9 5.740 (73/112) Installing mpg123-libs (1.32.8-r0)
+#9 5.794 (74/112) Installing libopenmpt (0.7.7-r0)
+#9 5.853 (75/112) Installing cjson (1.7.18-r0)
+#9 5.902 (76/112) Installing mbedtls (3.6.3-r0)
+#9 5.961 (77/112) Installing librist (0.2.10-r1)
+#9 6.019 (78/112) Installing libsrt (1.5.3-r0)
+#9 6.096 (79/112) Installing libssh (0.10.6-r0)
+#9 6.150 (80/112) Installing xz-libs (5.6.2-r1)
+#9 6.203 (81/112) Installing libxml2 (2.12.10-r0)
+#9 6.263 (82/112) Installing libsodium (1.0.19-r0)
+#9 6.316 (83/112) Installing libzmq (4.3.5-r2)
+#9 6.371 (84/112) Installing ffmpeg-libavformat (6.1.1-r8)
+#9 6.445 (85/112) Installing serd-libs (0.32.2-r0)
+#9 6.495 (86/112) Installing zix-libs (0.4.2-r0)
+#9 6.544 (87/112) Installing sord-libs (0.16.16-r0)
+#9 6.593 (88/112) Installing sratom (0.6.16-r0)
+#9 6.643 (89/112) Installing lilv-libs (0.24.24-r1)
+#9 6.695 (90/112) Installing glslang-libs (1.3.261.1-r0)
+#9 6.773 (91/112) Installing libdovi (3.3.0-r0)
+#9 6.827 (92/112) Installing spirv-tools (1.3.261.1-r0)
+#9 6.911 (93/112) Installing shaderc (2024.0-r0)
+#9 6.962 (94/112) Installing vulkan-loader (1.3.261.1-r0)
+#9 7.014 (95/112) Installing libplacebo (6.338.2-r1)
+#9 7.074 (96/112) Installing ffmpeg-libpostproc (6.1.1-r8)
+#9 7.124 (97/112) Installing ffmpeg-libswscale (6.1.1-r8)
+#9 7.177 (98/112) Installing vidstab (1.1.1-r0)
+#9 7.227 (99/112) Installing zimg (3.0.5-r2)
+#9 7.282 (100/112) Installing ffmpeg-libavfilter (6.1.1-r8)
+#9 7.371 (101/112) Installing libasyncns (0.8-r3)
+#9 7.420 (102/112) Installing dbus-libs (1.14.10-r1)
+#9 7.471 (103/112) Installing libltdl (2.4.7-r3)
+#9 7.520 (104/112) Installing orc (0.4.40-r0)
+#9 7.573 (105/112) Installing libflac (1.4.3-r1)
+#9 7.627 (106/112) Installing libsndfile (1.2.2-r1)
+#9 7.683 (107/112) Installing speexdsp (1.2.1-r2)
+#9 7.732 (108/112) Installing tdb-libs (1.4.9-r1)
+#9 7.782 (109/112) Installing libpulse (17.0-r0)
+#9 7.847 (110/112) Installing v4l-utils-libs (1.24.1-r1)
+#9 7.907 (111/112) Installing ffmpeg-libavdevice (6.1.1-r8)
+#9 7.959 (112/112) Installing ffmpeg (6.1.1-r8)
+#9 8.025 Executing busybox-1.36.1-r29.trigger
+#9 8.029 Executing glib-2.80.5-r0.trigger
+#9 8.032 OK: 134 MiB in 128 packages
+#9 ...
+#13 [builder 3/7] RUN npm install && npm install --workspace=@libraries/prisma-client @prisma/client
+#13 1.729 (node:7) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+#13 1.729 (Use `node --trace-warnings ...` to show where the warning was created)
+#13 6.017 npm warn deprecated superagent@8.1.2: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+#13 6.022 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#13 6.702 npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+#13 10.96 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#13 11.73 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#13 11.83 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#13 12.44 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#13 ...
+#9 [runner 2/9] RUN apk add --no-cache libssl3 dumb-init ffmpeg bash
+#9 DONE 20.0s
+#13 [builder 3/7] RUN npm install && npm install --workspace=@libraries/prisma-client @prisma/client
+#13 73.59 
+#13 73.59 > 1337-jupiter-monorepo@1.20.0 prepare
+#13 73.59 > husky
+#13 73.59 
+#13 73.63 .git can't be found
+#13 73.66 added 1853 packages, and audited 1860 packages in 1m
+#13 73.66 
+#13 73.66 397 packages are looking for funding
+#13 73.66   run `npm fund` for details
+#13 73.67 
+#13 73.67 4 moderate severity vulnerabilities
+#13 73.67 
+#13 73.67 To address all issues possible, run:
+#13 73.67   npm audit fix --force
+#13 73.67 
+#13 73.67 Some issues need review, and may require choosing
+#13 73.67 a different dependency.
+#13 73.67 
+#13 73.67 Run `npm audit` for details.
+#13 75.39 (node:1) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+#13 75.39 (Use `node --trace-warnings ...` to show where the warning was created)
+#13 79.40 
+#13 79.40 up to date, audited 1860 packages in 6s
+#13 79.40 
+#13 79.40 397 packages are looking for funding
+#13 79.40   run `npm fund` for details
+#13 79.40 
+#13 79.40 2 moderate severity vulnerabilities
+#13 79.40 
+#13 79.40 To address all issues, run:
+#13 79.40   npm audit fix --force
+#13 79.40 
+#13 79.40 Run `npm audit` for details.
+#13 DONE 79.7s
+#14 [builder 4/7] RUN npm install --workspace=backend @nestjs/cli
+#14 1.986 (node:1) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+#14 1.986 (Use `node --trace-warnings ...` to show where the warning was created)
+#14 4.712 
+#14 4.712 up to date, audited 1860 packages in 4s
+#14 4.712 
+#14 4.712 397 packages are looking for funding
+#14 4.712   run `npm fund` for details
+#14 4.720 
+#14 4.720 4 moderate severity vulnerabilities
+#14 4.720 
+#14 4.720 To address all issues possible, run:
+#14 4.720   npm audit fix --force
+#14 4.720 
+#14 4.720 Some issues need review, and may require choosing
+#14 4.720 a different dependency.
+#14 4.720 
+#14 4.720 Run `npm audit` for details.
+#14 DONE 4.9s
+#15 [builder 5/7] COPY --from=pruner /app/out/full/ .
+#15 DONE 0.2s
+#16 [builder 6/7] RUN npx turbo run build --filter=backend...
+#16 0.743 
+#16 0.743 Attention:
+#16 0.743 Turborepo now collects completely anonymous telemetry regarding usage.
+#16 0.743 This information is used to shape the Turborepo roadmap and prioritize features.
+#16 0.743 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#16 0.743 https://turborepo.com/docs/telemetry
+#16 0.743 
+#16 0.744 turbo 2.5.4
+#16 0.744 
+#16 0.805 • Packages in scope: @libraries/backend-common, @libraries/eslint-config, @libraries/prisma-client, @libraries/shared-core, @libraries/typescript-config, backend
+#16 0.805 • Running build in 6 packages
+#16 0.805 • Remote caching disabled
+#16 0.979 @libraries/prisma-client:prisma:generate: cache miss, executing a4dc044d87a795bb
+#16 0.981 @libraries/shared-core:build: cache miss, executing 9efd63af7ef7a667
+#16 1.134 @libraries/prisma-client:prisma:generate: 
+#16 1.134 @libraries/prisma-client:prisma:generate: > @libraries/prisma-client@1.0.0 prisma:generate
+#16 1.134 @libraries/prisma-client:prisma:generate: > prisma generate
+#16 1.134 @libraries/prisma-client:prisma:generate: 
+#16 1.147 @libraries/shared-core:build: 
+#16 1.147 @libraries/shared-core:build: > @libraries/shared-core@1.0.0 build
+#16 1.147 @libraries/shared-core:build: > tsc -p tsconfig.lib.json
+#16 1.147 @libraries/shared-core:build: 
+#16 2.541 @libraries/prisma-client:prisma:generate: Prisma schema loaded from schema
+#16 9.522 @libraries/prisma-client:prisma:generate: Error: Could not resolve @prisma/client despite the installation that we just tried.
+#16 9.522 @libraries/prisma-client:prisma:generate: Please try to install it by hand with npm i @prisma/client and rerun npx "prisma generate" 🙏.
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error Lifecycle script `prisma:generate` failed with error:
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error code 1
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error path /app/libs/prisma
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error workspace @libraries/prisma-client@1.0.0
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error location /app/libs/prisma
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error command failed
+#16 9.531 @libraries/prisma-client:prisma:generate: npm error command sh -c prisma generate
+#16 9.538 @libraries/prisma-client:prisma:generate: ERROR: command finished with error: command (/app/libs/prisma) /usr/local/bin/npm run prisma:generate exited (1)
+#16 9.538 @libraries/prisma-client#prisma:generate: command (/app/libs/prisma) /usr/local/bin/npm run prisma:generate exited (1)
+#16 9.539 
+#16 9.539  Tasks:    1 successful, 2 total
+#16 9.539 Cached:    0 cached, 2 total
+#16 9.539   Time:    8.79s 
+#16 9.539 Failed:    @libraries/prisma-client#prisma:generate
+#16 9.539 
+#16 9.547  ERROR  run failed: command  exited (1)
+#16 ERROR: process "/bin/sh -c npx turbo run build --filter=backend..." did not complete successfully: exit code: 1
+------
+ > [builder 6/7] RUN npx turbo run build --filter=backend...:
+9.531 @libraries/prisma-client:prisma:generate: npm error command sh -c prisma generate
+9.538 @libraries/prisma-client:prisma:generate: ERROR: command finished with error: command (/app/libs/prisma) /usr/local/bin/npm run prisma:generate exited (1)
+9.538 @libraries/prisma-client#prisma:generate: command (/app/libs/prisma) /usr/local/bin/npm run prisma:generate exited (1)
+9.539 
+9.539  Tasks:    1 successful, 2 total
+9.539 Cached:    0 cached, 2 total
+9.539   Time:    8.79s 
+9.539 Failed:    @libraries/prisma-client#prisma:generate
+9.539 
+9.547  ERROR  run failed: command  exited (1)
+------
+ 2 warnings found (use docker --debug to expand):
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ARG "SHARED_TOKEN") (line 13)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "SHARED_TOKEN") (line 17)
+backend.dockerfile:26
+--------------------
+  24 |     # Copy full source for build
+  25 |     COPY --from=pruner /app/out/full/ .
+  26 | >>> RUN npx turbo run build --filter=backend...
+  27 |     RUN npx turbo run prisma:generate --filter=backend...
+  28 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npx turbo run build --filter=backend..." did not complete successfully: exit code: 1
+Error: Process completed with exit code 1.
