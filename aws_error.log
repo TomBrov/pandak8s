@@ -1,1 +1,4 @@
 Error: creating EC2 Instance: operation error EC2: RunInstances, https response error StatusCode: 403, RequestID: 73770273-64d4-45de-b29e-6ec2adfc5d79, api error UnauthorizedOperation: You are not authorized to perform this operation. User: arn:aws:sts::774305603116:assumed-role/wl-cicd-infrastructure-execution-role/GitHubActions-1337-jupiter-monorepo-TomBrov is not authorized to perform: ec2:RunInstances on resource: arn:aws:ec2:il-central-1:774305603116:instance/* with an explicit deny in a service control policy. Encoded authorization failure message:
+
+source  = "terraform-aws-modules/ec2-instance/aws"
+version = "5.7.1"
