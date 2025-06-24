@@ -1,382 +1,400 @@
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpClientModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+throw new common_1.InternalServerErrorException('Failed to create user');
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[31m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [31m ERROR[39m [38;5;3m[ExceptionHandler] [39m[31mThe "path" argument must be of type string or an instance of Buffer or URL. Received undefined[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+^
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+InternalServerErrorException: Failed to create user
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at readFileSync (node:fs:440:14)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at AuthService.createUser (/home/node/app/dist/auth/users.service.js:146:19)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at new MediaMTXAuthService (/home/node/app/dist/video-server/MediamtxAuth.service.js:20:48)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async AuthService.onModuleInit (/home/node/app/dist/auth/users.service.js:56:13)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:373:19)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async Promise.all (index 0)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async callModuleInitHook (/home/node/node_modules/@nestjs/core/hooks/on-module-init.hook.js:43:5)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async NestApplication.callInitHook (/home/node/node_modules/@nestjs/core/nest-application-context.js:234:13)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async NestApplication.init (/home/node/node_modules/@nestjs/core/nest-application.js:100:9)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async NestApplication.listen (/home/node/node_modules/@nestjs/core/nest-application.js:170:13)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+at async bootstrap (/home/node/app/dist/main.js:75:5) {
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Promise.all (index 5)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+response: {
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async InstanceLoader.createInstancesOfProviders (/home/node/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+message: 'Failed to create user',
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mJobQueueModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+error: 'Internal Server Error',
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +1ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+statusCode: 500
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+},
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrometheusModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+status: 500,
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+options: {}
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mOpenTelemetryCoreModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mOpenTelemetryModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mJobQueueModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Object.readFileSync (node:fs:442:20)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/devices/devices.module.js:30:73)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Promise.all (index 5) {
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-errno: -2,
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-code: 'ENOENT',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-syscall: 'open',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
+June 24, 2025 at 16:47 (UTC+3:00)
 }
-be1c52d8ebfc444d9c7eed4ef9b48502
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+Node.js v22.16.0
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Object.readFileSync (node:fs:442:20)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+/home/node/app/dist/auth/users.service.js:146
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+(node:108) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/radar-manager/radar-manager.module.js:40:73)
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+(Use `node --trace-deprecation ...` to show where the warning was created)
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Promise.all (index 6) {
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-errno: -2,
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-code: 'ENOENT',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-syscall: 'open',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-}
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Object.readFileSync (node:fs:442:20)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/camera/cameras.module.js:54:73)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Promise.all (index 8) {
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-errno: -2,
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-code: 'ENOENT',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-syscall: 'open',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-}
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Object.readFileSync (node:fs:442:20)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/auth/users.module.js:46:73)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-at async Promise.all (index 6) {
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-errno: -2,
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-code: 'ENOENT',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-syscall: 'open',
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-}
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
+June 24, 2025 at 16:47 (UTC+3:00)
 > backend@1.0.0 start:prod
-be1c52d8ebfc444d9c7eed4ef9b48502
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
+June 24, 2025 at 16:47 (UTC+3:00)
 > node dist/main.js
-be1c52d8ebfc444d9c7eed4ef9b48502
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-+ exec npm run start:prod
-be1c52d8ebfc444d9c7eed4ef9b48502
-jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
+June 24, 2025 at 16:47 (UTC+3:00)
 + echo 'Starting Backend Server...'
-be1c52d8ebfc444d9c7eed4ef9b48502
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
+June 24, 2025 at 16:47 (UTC+3:00)
 Starting Backend Server...
-be1c52d8ebfc444d9c7eed4ef9b48502
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-No pending migrations to apply.
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
++ exec npm run start:prod
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-122 migrations found in prisma/migrations
-be1c52d8ebfc444d9c7eed4ef9b48502
+June 24, 2025 at 16:47 (UTC+3:00)
+The following migration(s) have been applied:
+43456a05b1df4a2ca1b2e346d792863b
 jupiter-backend
-June 24, 2025 at 13:32 (UTC+3:00)
-Datasource "db": PostgreSQL database "postgres", schemas "archive, jupiter" at "10.40.13.114:5432"
+June 24, 2025 at 16:47 (UTC+3:00)
+migrations/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20240912072644_jupiter_init/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20240912075751_change_cameras_relations/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20240912075752_add_ground_polygon_type/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20240912080424_delete_cell_cascade/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20240922065036_store_polygon_metadata_under_specific_column/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20240926140345_active_spotter_id/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241006084247_add_screen_recordings_table/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241006105446_cascade_user_hamal/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241008113235_delete_is_free/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241030081915_scan_plan/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241030221438_add_mpegts_camera/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241106114426_add_indication_table/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241107092856_add_missing_extention/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241110125605_camera_recordings/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241110151416_camera_record_index/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241112091528_scan_plan_on_delete/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241113112704_remove_hunter_from_db/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241121140042_remove_detections/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241124095543_update_indications_table/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241124112230_remove_optional_field_in_indications/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241126151135_scan_plan_camera_on_delete/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241126151736_camera_soft_delete/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241201165308_remove_video_server_port/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241209112051_task_from_indication/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241210115137_add_ip_port_to_camera_and_radar_tables/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241211103230_add_radar_type/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241217135220_add_attribute_lattimeinpoligon/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241218091809_add_detection_type_to_task/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241218115857_classifications_drop_tables_update_enum/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241218134407_change_detection_type_to_enum_radar_indications/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241222085537_add_default_task_status/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241223112125_add_channel_model/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241223152647_drop_column_last_time_in_polygon_tasks/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241224141210_set_default_time_radar_indications/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ 20241226090920_name_unique_ground_org/
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
+June 24, 2025 at 16:47 (UTC+3:00)
+└─ migration.sql
+43456a05b1df4a2ca1b2e346d792863b
+jupiter-backend
