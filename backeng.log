@@ -1,0 +1,382 @@
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpClientModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[31m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [31m ERROR[39m [38;5;3m[ExceptionHandler] [39m[31mThe "path" argument must be of type string or an instance of Buffer or URL. Received undefined[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at readFileSync (node:fs:440:14)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at new MediaMTXAuthService (/home/node/app/dist/video-server/MediamtxAuth.service.js:20:48)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:373:19)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Promise.all (index 5)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async InstanceLoader.createInstancesOfProviders (/home/node/node_modules/@nestjs/core/injector/instance-loader.js:55:9)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mJobQueueModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +1ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrometheusModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mOpenTelemetryCoreModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mOpenTelemetryModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mJobQueueModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+[32m[Nest] 106 - [39m06/24/2025, 10:32:40 AM [32m LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Object.readFileSync (node:fs:442:20)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/devices/devices.module.js:30:73)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Promise.all (index 5) {
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+errno: -2,
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+code: 'ENOENT',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+syscall: 'open',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+}
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Object.readFileSync (node:fs:442:20)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/radar-manager/radar-manager.module.js:40:73)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Promise.all (index 6) {
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+errno: -2,
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+code: 'ENOENT',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+syscall: 'open',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+}
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Object.readFileSync (node:fs:442:20)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/camera/cameras.module.js:54:73)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Promise.all (index 8) {
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+errno: -2,
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+code: 'ENOENT',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+syscall: 'open',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+}
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+Error reading local kms symmetric keys Error: ENOENT: no such file or directory, open 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Object.readFileSync (node:fs:442:20)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at new LocalKms (/home/node/app/dist/kms/LocalKms.js:44:49)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at InstanceWrapper.useFactory [as metatype] (/home/node/app/dist/auth/users.module.js:46:73)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at Injector.instantiateClass (/home/node/node_modules/@nestjs/core/injector/injector.js:376:55)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at callback (/home/node/node_modules/@nestjs/core/injector/injector.js:65:45)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.resolveConstructorParams (/home/node/node_modules/@nestjs/core/injector/injector.js:145:24)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadInstance (/home/node/node_modules/@nestjs/core/injector/injector.js:70:13)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Injector.loadProvider (/home/node/node_modules/@nestjs/core/injector/injector.js:98:9)
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async /home/node/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+at async Promise.all (index 6) {
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+errno: -2,
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+code: 'ENOENT',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+syscall: 'open',
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+path: 'b730629ac9e85283409a3299612e67f7d4893904faf66175fd58bf4303e9826a'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+}
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+> backend@1.0.0 start:prod
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+> node dist/main.js
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
++ exec npm run start:prod
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
++ echo 'Starting Backend Server...'
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+Starting Backend Server...
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+No pending migrations to apply.
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+122 migrations found in prisma/migrations
+be1c52d8ebfc444d9c7eed4ef9b48502
+jupiter-backend
+June 24, 2025 at 13:32 (UTC+3:00)
+Datasource "db": PostgreSQL database "postgres", schemas "archive, jupiter" at "10.40.13.114:5432"
