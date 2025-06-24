@@ -1,0 +1,821 @@
+/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/010_install_timescaledb_toolkit.sh
+2025-06-24 13:42:20.722 UTC [75] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:42:20.724 UTC [75] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:42:20.724 UTC [75] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=psql
+CREATE EXTENSION
+2025-06-24 13:42:20.988 UTC [75] postgres@postgres LOG:  disconnection: session time: 0:00:00.266 user=postgres database=postgres host=[local]
+2025-06-24 13:42:21.001 UTC [77] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:42:21.002 UTC [77] postgres@template1 LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:42:21.002 UTC [77] postgres@template1 LOG:  connection authorized: user=postgres database=template1 application_name=psql
+CREATE EXTENSION
+2025-06-24 13:42:21.233 UTC [77] postgres@template1 LOG:  disconnection: session time: 0:00:00.232 user=postgres database=template1 host=[local]
+
+/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/create-readonly-user.sh
+ERROR: POSTGRES_READONLY_PASSWORD_FILE doesn't exist or is not readable
+
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+2025-06-24 13:42:22.010 UTC [1] @ LOG:  starting PostgreSQL 17.5 (Ubuntu 17.5-1.pgdg22.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2025-06-24 13:42:22.010 UTC [1] @ LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2025-06-24 13:42:22.010 UTC [1] @ LOG:  listening on IPv6 address "::", port 5432
+2025-06-24 13:42:22.017 UTC [1] @ LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2025-06-24 13:42:22.028 UTC [21] @ LOG:  database system was interrupted; last known up at 2025-06-24 13:42:20 UTC
+2025-06-24 13:42:22.052 UTC [21] @ LOG:  database system was not properly shut down; automatic recovery in progress
+2025-06-24 13:42:22.057 UTC [21] @ LOG:  redo starts at 0/14E2888
+2025-06-24 13:42:22.147 UTC [21] @ LOG:  invalid record length at 0/1C70048: expected at least 24, got 0
+2025-06-24 13:42:22.147 UTC [21] @ LOG:  redo done at 0/1C5CDA0 system usage: CPU: user: 0.06 s, system: 0.02 s, elapsed: 0.08 s
+2025-06-24 13:42:22.203 UTC [19] @ LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-06-24 13:42:22.281 UTC [19] @ LOG:  checkpoint complete: wrote 1121 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.058 s, sync=0.014 s, total=0.080 s; sync files=432, longest=0.004 s, average=0.001 s; distance=7734 kB, estimate=7734 kB; lsn=0/1C70048, redo lsn=0/1C70048
+2025-06-24 13:42:22.293 UTC [1] @ LOG:  database system is ready to accept connections
+2025-06-24 13:42:22.296 UTC [24] @ LOG:  TimescaleDB background worker launcher connected to shared catalogs
+2025-06-24 13:42:26.881 UTC [34] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:42:26.882 UTC [34] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:42:26.882 UTC [34] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:42:26.884 UTC [34] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:42:36.954 UTC [42] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:42:36.955 UTC [42] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:42:36.955 UTC [42] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:42:36.957 UTC [42] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:42:47.034 UTC [50] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:42:47.035 UTC [50] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:42:47.035 UTC [50] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:42:47.037 UTC [50] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:42:57.112 UTC [58] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:42:57.113 UTC [58] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:42:57.113 UTC [58] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:42:57.115 UTC [58] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:43:07.188 UTC [66] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:43:07.189 UTC [66] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:43:07.189 UTC [66] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:43:07.190 UTC [66] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:43:17.267 UTC [75] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:43:17.268 UTC [75] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:43:17.268 UTC [75] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:43:17.269 UTC [75] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:43:27.339 UTC [83] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:43:27.340 UTC [83] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:43:27.340 UTC [83] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:43:27.341 UTC [83] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:43:37.415 UTC [91] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:43:37.418 UTC [91] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:43:37.418 UTC [91] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:43:37.426 UTC [91] postgres@postgres LOG:  disconnection: session time: 0:00:00.011 user=postgres database=postgres host=[local]
+2025-06-24 13:43:47.494 UTC [99] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:43:47.495 UTC [99] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:43:47.495 UTC [99] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:43:47.497 UTC [99] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:43:57.572 UTC [109] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:43:57.573 UTC [109] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:43:57.573 UTC [109] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:43:57.575 UTC [109] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:44:07.645 UTC [117] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:44:07.646 UTC [117] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:44:07.647 UTC [117] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:44:07.649 UTC [117] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:44:17.716 UTC [125] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:44:17.717 UTC [125] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:44:17.717 UTC [125] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:44:17.719 UTC [125] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:44:27.810 UTC [133] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:44:27.811 UTC [133] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:44:27.811 UTC [133] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:44:27.812 UTC [133] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:44:37.882 UTC [142] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:44:37.883 UTC [142] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:44:37.883 UTC [142] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:44:37.885 UTC [142] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:44:47.956 UTC [150] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:44:47.957 UTC [150] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:44:47.957 UTC [150] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:44:47.959 UTC [150] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:44:58.063 UTC [158] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:44:58.065 UTC [158] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:44:58.065 UTC [158] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:44:58.066 UTC [158] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:45:08.137 UTC [166] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:45:08.138 UTC [166] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:45:08.138 UTC [166] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:45:08.140 UTC [166] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:45:18.224 UTC [173] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:45:18.226 UTC [173] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:45:18.226 UTC [173] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:45:18.227 UTC [173] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:45:28.306 UTC [182] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:45:28.307 UTC [182] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:45:28.307 UTC [182] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:45:28.309 UTC [182] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:45:38.398 UTC [190] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:45:38.399 UTC [190] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:45:38.399 UTC [190] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:45:38.401 UTC [190] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:45:48.481 UTC [198] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:45:48.482 UTC [198] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:45:48.482 UTC [198] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:45:48.483 UTC [198] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:45:58.555 UTC [206] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:45:58.556 UTC [206] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:45:58.556 UTC [206] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:45:58.557 UTC [206] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:46:08.664 UTC [215] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:46:08.666 UTC [215] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:46:08.666 UTC [215] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:46:08.667 UTC [215] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:46:18.740 UTC [223] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:46:18.741 UTC [223] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:46:18.741 UTC [223] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:46:18.743 UTC [223] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:46:28.812 UTC [231] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:46:28.813 UTC [231] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:46:28.813 UTC [231] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:46:28.815 UTC [231] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:46:38.883 UTC [239] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:46:38.884 UTC [239] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:46:38.884 UTC [239] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:46:38.886 UTC [239] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:46:48.963 UTC [247] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:46:48.965 UTC [247] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:46:48.965 UTC [247] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:46:48.967 UTC [247] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:46:59.036 UTC [256] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:46:59.037 UTC [256] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:46:59.037 UTC [256] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:46:59.039 UTC [256] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:47:09.108 UTC [264] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:47:09.109 UTC [264] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:47:09.109 UTC [264] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:47:09.111 UTC [264] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:47:19.185 UTC [272] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:47:19.186 UTC [272] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:47:19.186 UTC [272] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:47:19.188 UTC [272] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:47:29.261 UTC [280] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:47:29.262 UTC [280] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:47:29.262 UTC [280] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:47:29.263 UTC [280] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:47:31.757 UTC [281] [unknown]@[unknown] LOG:  connection received: host=10.40.14.83 port=54648
+2025-06-24 13:47:31.801 UTC [281] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:47:31.801 UTC [281] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:47:31.821 UTC [281] postgres@postgres LOG:  disconnection: session time: 0:00:00.064 user=postgres database=postgres host=10.40.14.83 port=54648
+2025-06-24 13:47:31.880 UTC [282] [unknown]@[unknown] LOG:  connection received: host=10.40.14.83 port=54660
+2025-06-24 13:47:31.897 UTC [282] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:47:31.897 UTC [282] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:47:34.493 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "time" does not follow best practices
+2025-06-24 13:47:34.493 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:34.493 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "createdAt" does not follow best practices
+2025-06-24 13:47:34.493 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:34.495 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "time" does not follow best practices
+2025-06-24 13:47:34.495 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:34.496 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "time" does not follow best practices
+2025-06-24 13:47:34.496 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.480 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "time" does not follow best practices
+2025-06-24 13:47:35.480 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.480 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "createdAt" does not follow best practices
+2025-06-24 13:47:35.480 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "time" does not follow best practices
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "createdAt" does not follow best practices
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "groundOrgCreatedAt" does not follow best practices
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "groundOrgUpdatedAt" does not follow best practices
+2025-06-24 13:47:35.481 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.523 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "time" does not follow best practices
+2025-06-24 13:47:35.523 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.605 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "created_at" does not follow best practices
+2025-06-24 13:47:35.605 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.605 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "updated_at" does not follow best practices
+2025-06-24 13:47:35.605 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.605 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "recording_start_time" does not follow best practices
+2025-06-24 13:47:35.605 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.606 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "created_at" does not follow best practices
+2025-06-24 13:47:35.606 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.606 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "updated_at" does not follow best practices
+2025-06-24 13:47:35.606 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:35.606 UTC [282] postgres@postgres WARNING:  column type "timestamp without time zone" used for "recording_start_time" does not follow best practices
+2025-06-24 13:47:35.606 UTC [282] postgres@postgres HINT:  Use datatype TIMESTAMPTZ instead.
+2025-06-24 13:47:36.018 UTC [282] postgres@postgres LOG:  could not receive data from client: Connection reset by peer
+2025-06-24 13:47:36.018 UTC [282] postgres@postgres LOG:  disconnection: session time: 0:00:04.138 user=postgres database=postgres host=10.40.14.83 port=54660
+2025-06-24 13:47:39.201 UTC [289] [unknown]@[unknown] LOG:  connection received: host=10.40.14.83 port=54672
+2025-06-24 13:47:39.216 UTC [289] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:47:39.216 UTC [289] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:47:39.260 UTC [289] postgres@postgres LOG:  disconnection: session time: 0:00:00.060 user=postgres database=postgres host=10.40.14.83 port=54672
+2025-06-24 13:47:39.335 UTC [297] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:47:39.336 UTC [297] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:47:39.336 UTC [297] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:47:39.338 UTC [297] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:47:49.410 UTC [305] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:47:49.411 UTC [305] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:47:49.411 UTC [305] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:47:49.413 UTC [305] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:47:59.496 UTC [313] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:47:59.497 UTC [313] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:47:59.497 UTC [313] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:47:59.499 UTC [313] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:48:09.590 UTC [321] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:48:09.591 UTC [321] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:48:09.591 UTC [321] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:48:09.593 UTC [321] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:48:19.681 UTC [329] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:48:19.682 UTC [329] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:48:19.682 UTC [329] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:48:19.685 UTC [329] postgres@postgres LOG:  disconnection: session time: 0:00:00.004 user=postgres database=postgres host=[local]
+2025-06-24 13:48:29.810 UTC [337] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:48:29.812 UTC [337] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:48:29.813 UTC [337] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:48:29.821 UTC [337] postgres@postgres LOG:  disconnection: session time: 0:00:00.010 user=postgres database=postgres host=[local]
+2025-06-24 13:48:39.912 UTC [345] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:48:39.914 UTC [345] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:48:39.914 UTC [345] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:48:39.916 UTC [345] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:48:49.991 UTC [353] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:48:49.992 UTC [353] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:48:49.992 UTC [353] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:48:49.994 UTC [353] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:49:00.067 UTC [361] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:49:00.068 UTC [361] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:49:00.068 UTC [361] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:49:00.070 UTC [361] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:49:10.182 UTC [370] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:49:10.184 UTC [370] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:49:10.185 UTC [370] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:49:10.190 UTC [370] postgres@postgres LOG:  disconnection: session time: 0:00:00.007 user=postgres database=postgres host=[local]
+2025-06-24 13:49:20.298 UTC [378] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:49:20.300 UTC [378] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:49:20.300 UTC [378] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:49:20.302 UTC [378] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:49:30.370 UTC [386] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:49:30.371 UTC [386] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:49:30.371 UTC [386] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:49:30.372 UTC [386] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:49:30.756 UTC [387] [unknown]@[unknown] LOG:  connection received: host=10.40.14.190 port=54344
+2025-06-24 13:49:30.772 UTC [387] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:49:30.772 UTC [387] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:49:30.790 UTC [387] postgres@postgres LOG:  disconnection: session time: 0:00:00.034 user=postgres database=postgres host=10.40.14.190 port=54344
+2025-06-24 13:49:30.852 UTC [388] [unknown]@[unknown] LOG:  connection received: host=10.40.14.190 port=54356
+2025-06-24 13:49:30.868 UTC [388] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:49:30.868 UTC [388] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:49:30.904 UTC [388] postgres@postgres LOG:  could not receive data from client: Connection reset by peer
+2025-06-24 13:49:30.904 UTC [388] postgres@postgres LOG:  disconnection: session time: 0:00:00.052 user=postgres database=postgres host=10.40.14.190 port=54356
+2025-06-24 13:49:33.889 UTC [389] [unknown]@[unknown] LOG:  connection received: host=10.40.14.190 port=54364
+2025-06-24 13:49:33.904 UTC [389] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:49:33.904 UTC [389] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:49:33.944 UTC [389] postgres@postgres LOG:  disconnection: session time: 0:00:00.055 user=postgres database=postgres host=10.40.14.190 port=54364
+2025-06-24 13:49:40.471 UTC [397] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:49:40.472 UTC [397] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:49:40.472 UTC [397] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:49:40.474 UTC [397] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:49:50.556 UTC [405] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:49:50.557 UTC [405] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:49:50.557 UTC [405] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:49:50.558 UTC [405] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:50:00.670 UTC [414] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:50:00.672 UTC [414] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:50:00.672 UTC [414] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:50:00.674 UTC [414] postgres@postgres LOG:  disconnection: session time: 0:00:00.006 user=postgres database=postgres host=[local]
+2025-06-24 13:50:10.752 UTC [422] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:50:10.753 UTC [422] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:50:10.753 UTC [422] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:50:10.755 UTC [422] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:50:20.829 UTC [430] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:50:20.830 UTC [430] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:50:20.830 UTC [430] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:50:20.833 UTC [430] postgres@postgres LOG:  disconnection: session time: 0:00:00.004 user=postgres database=postgres host=[local]
+2025-06-24 13:50:30.938 UTC [438] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:50:30.939 UTC [438] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:50:30.939 UTC [438] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:50:30.942 UTC [438] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:50:41.013 UTC [447] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:50:41.014 UTC [447] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:50:41.014 UTC [447] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:50:41.016 UTC [447] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:50:51.092 UTC [455] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:50:51.093 UTC [455] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:50:51.093 UTC [455] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:50:51.095 UTC [455] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:51:01.175 UTC [463] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:51:01.176 UTC [463] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:51:01.177 UTC [463] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:51:01.178 UTC [463] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:51:11.247 UTC [471] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:51:11.248 UTC [471] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:51:11.248 UTC [471] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:51:11.250 UTC [471] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:51:21.321 UTC [479] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:51:21.322 UTC [479] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:51:21.322 UTC [479] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:51:21.324 UTC [479] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:51:31.403 UTC [488] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:51:31.404 UTC [488] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:51:31.404 UTC [488] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:51:31.406 UTC [488] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:51:41.485 UTC [496] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:51:41.487 UTC [496] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:51:41.487 UTC [496] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:51:41.489 UTC [496] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:51:51.580 UTC [503] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:51:51.581 UTC [503] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:51:51.581 UTC [503] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:51:51.583 UTC [503] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:52:01.663 UTC [511] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:52:01.665 UTC [511] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:52:01.665 UTC [511] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:52:01.666 UTC [511] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:52:11.753 UTC [520] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:52:11.754 UTC [520] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:52:11.754 UTC [520] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:52:11.756 UTC [520] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:52:21.853 UTC [528] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:52:21.854 UTC [528] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:52:21.854 UTC [528] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:52:21.856 UTC [528] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:52:22.343 UTC [19] @ LOG:  checkpoint starting: time
+2025-06-24 13:52:31.929 UTC [536] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:52:31.930 UTC [536] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:52:31.930 UTC [536] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:52:31.932 UTC [536] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:52:42.006 UTC [544] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:52:42.007 UTC [544] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:52:42.007 UTC [544] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:52:42.009 UTC [544] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:52:52.081 UTC [552] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:52:52.086 UTC [552] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:52:52.086 UTC [552] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:52:52.088 UTC [552] postgres@postgres LOG:  disconnection: session time: 0:00:00.007 user=postgres database=postgres host=[local]
+2025-06-24 13:53:02.162 UTC [561] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:53:02.163 UTC [561] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:53:02.163 UTC [561] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:53:02.165 UTC [561] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:53:12.236 UTC [569] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:53:12.237 UTC [569] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:53:12.237 UTC [569] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:53:12.239 UTC [569] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:53:22.324 UTC [577] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:53:22.325 UTC [577] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:53:22.325 UTC [577] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:53:22.327 UTC [577] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:53:32.402 UTC [585] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:53:32.403 UTC [585] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:53:32.403 UTC [585] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:53:32.405 UTC [585] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:53:42.482 UTC [594] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:53:42.483 UTC [594] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:53:42.483 UTC [594] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:53:42.485 UTC [594] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:53:52.552 UTC [602] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:53:52.553 UTC [602] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:53:52.554 UTC [602] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:53:52.555 UTC [602] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:54:02.659 UTC [610] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:54:02.663 UTC [610] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:54:02.663 UTC [610] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:54:02.668 UTC [610] postgres@postgres LOG:  disconnection: session time: 0:00:00.009 user=postgres database=postgres host=[local]
+2025-06-24 13:54:12.761 UTC [618] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:54:12.762 UTC [618] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:54:12.762 UTC [618] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:54:12.765 UTC [618] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:54:22.832 UTC [627] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:54:22.833 UTC [627] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:54:22.833 UTC [627] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:54:22.834 UTC [627] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:54:32.911 UTC [635] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:54:32.912 UTC [635] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:54:32.912 UTC [635] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:54:32.914 UTC [635] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:54:42.982 UTC [643] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:54:42.983 UTC [643] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:54:42.983 UTC [643] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:54:42.985 UTC [643] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:54:45.641 UTC [644] [unknown]@[unknown] LOG:  connection received: host=10.40.13.28 port=49514
+2025-06-24 13:54:45.654 UTC [644] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:54:45.654 UTC [644] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:54:45.664 UTC [644] postgres@postgres LOG:  disconnection: session time: 0:00:00.023 user=postgres database=postgres host=10.40.13.28 port=49514
+2025-06-24 13:54:45.740 UTC [645] [unknown]@[unknown] LOG:  connection received: host=10.40.13.28 port=49528
+2025-06-24 13:54:45.752 UTC [645] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:54:45.752 UTC [645] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:54:45.779 UTC [645] postgres@postgres LOG:  disconnection: session time: 0:00:00.038 user=postgres database=postgres host=10.40.13.28 port=49528
+2025-06-24 13:54:48.672 UTC [646] [unknown]@[unknown] LOG:  connection received: host=10.40.13.28 port=52002
+2025-06-24 13:54:48.684 UTC [646] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:54:48.684 UTC [646] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:54:48.719 UTC [646] postgres@postgres LOG:  disconnection: session time: 0:00:00.047 user=postgres database=postgres host=10.40.13.28 port=52002
+2025-06-24 13:54:53.053 UTC [654] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:54:53.054 UTC [654] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:54:53.054 UTC [654] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:54:53.056 UTC [654] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:55:03.150 UTC [662] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:55:03.151 UTC [662] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:55:03.151 UTC [662] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:55:03.153 UTC [662] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:55:13.224 UTC [671] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:55:13.225 UTC [671] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:55:13.226 UTC [671] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:55:13.227 UTC [671] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:55:23.306 UTC [679] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:55:23.307 UTC [679] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:55:23.307 UTC [679] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:55:23.309 UTC [679] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:55:33.379 UTC [687] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:55:33.380 UTC [687] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:55:33.380 UTC [687] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:55:33.382 UTC [687] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:55:36.726 UTC [19] @ LOG:  checkpoint complete: wrote 1942 buffers (0.4%); 1 WAL file(s) added, 0 removed, 0 recycled; write=194.313 s, sync=0.008 s, total=194.384 s; sync files=640, longest=0.003 s, average=0.001 s; distance=16212 kB, estimate=16212 kB; lsn=0/2C453E8, redo lsn=0/2C450F8
+2025-06-24 13:55:43.454 UTC [695] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:55:43.455 UTC [695] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:55:43.455 UTC [695] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:55:43.457 UTC [695] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:55:53.547 UTC [704] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:55:53.548 UTC [704] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:55:53.548 UTC [704] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:55:53.550 UTC [704] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:56:03.634 UTC [712] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:56:03.635 UTC [712] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:56:03.635 UTC [712] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:56:03.637 UTC [712] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:56:13.702 UTC [720] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:56:13.703 UTC [720] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:56:13.703 UTC [720] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:56:13.704 UTC [720] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:56:23.779 UTC [728] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:56:23.781 UTC [728] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:56:23.781 UTC [728] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:56:23.783 UTC [728] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:56:33.874 UTC [736] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:56:33.875 UTC [736] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:56:33.875 UTC [736] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:56:33.877 UTC [736] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:56:43.968 UTC [745] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:56:43.970 UTC [745] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:56:43.970 UTC [745] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:56:43.972 UTC [745] postgres@postgres LOG:  disconnection: session time: 0:00:00.004 user=postgres database=postgres host=[local]
+2025-06-24 13:56:47.178 UTC [746] [unknown]@[unknown] LOG:  connection received: host=10.40.14.189 port=33488
+2025-06-24 13:56:47.196 UTC [746] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:56:47.196 UTC [746] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:56:47.214 UTC [746] postgres@postgres LOG:  disconnection: session time: 0:00:00.035 user=postgres database=postgres host=10.40.14.189 port=33488
+2025-06-24 13:56:47.271 UTC [747] [unknown]@[unknown] LOG:  connection received: host=10.40.14.189 port=33498
+2025-06-24 13:56:47.288 UTC [747] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:56:47.288 UTC [747] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:56:47.324 UTC [747] postgres@postgres LOG:  disconnection: session time: 0:00:00.053 user=postgres database=postgres host=10.40.14.189 port=33498
+2025-06-24 13:56:50.562 UTC [748] [unknown]@[unknown] LOG:  connection received: host=10.40.14.189 port=33504
+2025-06-24 13:56:50.578 UTC [748] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:56:50.578 UTC [748] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:56:50.618 UTC [748] postgres@postgres LOG:  disconnection: session time: 0:00:00.056 user=postgres database=postgres host=10.40.14.189 port=33504
+2025-06-24 13:56:54.043 UTC [756] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:56:54.044 UTC [756] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:56:54.044 UTC [756] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:56:54.046 UTC [756] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:57:04.117 UTC [764] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:57:04.118 UTC [764] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:57:04.118 UTC [764] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:57:04.120 UTC [764] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:57:14.196 UTC [772] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:57:14.197 UTC [772] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:57:14.197 UTC [772] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:57:14.199 UTC [772] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:57:22.806 UTC [19] @ LOG:  checkpoint starting: time
+2025-06-24 13:57:23.029 UTC [19] @ LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.209 s, sync=0.003 s, total=0.224 s; sync files=3, longest=0.003 s, average=0.001 s; distance=1 kB, estimate=14591 kB; lsn=0/2C45620, redo lsn=0/2C455C8
+2025-06-24 13:57:24.274 UTC [781] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:57:24.276 UTC [781] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:57:24.276 UTC [781] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:57:24.277 UTC [781] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:57:34.356 UTC [789] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:57:34.358 UTC [789] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:57:34.358 UTC [789] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:57:34.359 UTC [789] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:57:44.435 UTC [797] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:57:44.436 UTC [797] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:57:44.436 UTC [797] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:57:44.438 UTC [797] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:57:54.511 UTC [805] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:57:54.512 UTC [805] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:57:54.512 UTC [805] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:57:54.514 UTC [805] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:04.583 UTC [813] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:58:04.585 UTC [813] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:58:04.585 UTC [813] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:58:04.586 UTC [813] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:14.661 UTC [822] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:58:14.662 UTC [822] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:58:14.662 UTC [822] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:58:14.664 UTC [822] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:24.736 UTC [830] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:58:24.737 UTC [830] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:58:24.737 UTC [830] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:58:24.739 UTC [830] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:34.806 UTC [838] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:58:34.807 UTC [838] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:58:34.807 UTC [838] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:58:34.809 UTC [838] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:44.877 UTC [846] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:58:44.878 UTC [846] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:58:44.878 UTC [846] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:58:44.880 UTC [846] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:54.950 UTC [855] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:58:54.952 UTC [855] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:58:54.952 UTC [855] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:58:54.953 UTC [855] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:58:58.092 UTC [856] [unknown]@[unknown] LOG:  connection received: host=10.40.14.188 port=47384
+2025-06-24 13:58:58.141 UTC [856] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:58:58.141 UTC [856] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:58:58.158 UTC [856] postgres@postgres LOG:  disconnection: session time: 0:00:00.066 user=postgres database=postgres host=10.40.14.188 port=47384
+2025-06-24 13:58:58.213 UTC [857] [unknown]@[unknown] LOG:  connection received: host=10.40.14.188 port=47388
+2025-06-24 13:58:58.229 UTC [857] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:58:58.229 UTC [857] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:58:58.266 UTC [857] postgres@postgres LOG:  could not receive data from client: Connection reset by peer
+2025-06-24 13:58:58.266 UTC [857] postgres@postgres LOG:  disconnection: session time: 0:00:00.053 user=postgres database=postgres host=10.40.14.188 port=47388
+2025-06-24 13:59:01.340 UTC [858] [unknown]@[unknown] LOG:  connection received: host=10.40.14.188 port=34610
+2025-06-24 13:59:01.356 UTC [858] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 13:59:01.356 UTC [858] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 13:59:01.405 UTC [858] postgres@postgres LOG:  disconnection: session time: 0:00:00.066 user=postgres database=postgres host=10.40.14.188 port=34610
+2025-06-24 13:59:05.032 UTC [866] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:59:05.033 UTC [866] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:59:05.033 UTC [866] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:59:05.035 UTC [866] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:59:15.105 UTC [874] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:59:15.106 UTC [874] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:59:15.106 UTC [874] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:59:15.108 UTC [874] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:59:25.179 UTC [882] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:59:25.180 UTC [882] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:59:25.180 UTC [882] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:59:25.182 UTC [882] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:59:35.256 UTC [890] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:59:35.258 UTC [890] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:59:35.259 UTC [890] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:59:35.260 UTC [890] postgres@postgres LOG:  disconnection: session time: 0:00:00.004 user=postgres database=postgres host=[local]
+2025-06-24 13:59:45.338 UTC [899] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:59:45.339 UTC [899] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:59:45.339 UTC [899] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:59:45.341 UTC [899] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 13:59:55.407 UTC [907] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 13:59:55.408 UTC [907] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 13:59:55.408 UTC [907] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 13:59:55.410 UTC [907] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:00:05.483 UTC [915] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:00:05.484 UTC [915] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:00:05.484 UTC [915] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:00:05.486 UTC [915] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:00:15.557 UTC [923] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:00:15.558 UTC [923] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:00:15.558 UTC [923] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:00:15.560 UTC [923] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:00:25.645 UTC [932] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:00:25.646 UTC [932] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:00:25.646 UTC [932] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:00:25.648 UTC [932] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:00:35.721 UTC [940] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:00:35.722 UTC [940] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:00:35.722 UTC [940] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:00:35.724 UTC [940] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:00:45.804 UTC [948] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:00:45.805 UTC [948] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:00:45.805 UTC [948] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:00:45.807 UTC [948] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:00:55.879 UTC [956] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:00:55.880 UTC [956] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:00:55.880 UTC [956] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:00:55.882 UTC [956] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:01:05.951 UTC [964] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:01:05.952 UTC [964] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:01:05.952 UTC [964] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:01:05.954 UTC [964] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:01:16.024 UTC [973] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:01:16.026 UTC [973] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:01:16.026 UTC [973] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:01:16.029 UTC [973] postgres@postgres LOG:  disconnection: session time: 0:00:00.004 user=postgres database=postgres host=[local]
+2025-06-24 14:01:26.102 UTC [982] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:01:26.104 UTC [982] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:01:26.104 UTC [982] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:01:26.105 UTC [982] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:01:36.178 UTC [990] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:01:36.180 UTC [990] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:01:36.180 UTC [990] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:01:36.181 UTC [990] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:01:46.256 UTC [998] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:01:46.258 UTC [998] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:01:46.258 UTC [998] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:01:46.262 UTC [998] postgres@postgres LOG:  disconnection: session time: 0:00:00.006 user=postgres database=postgres host=[local]
+2025-06-24 14:01:56.304 UTC [1000] [unknown]@[unknown] LOG:  connection received: host=10.40.15.144 port=48294
+2025-06-24 14:01:56.319 UTC [1000] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 14:01:56.319 UTC [1000] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 14:01:56.337 UTC [1000] postgres@postgres LOG:  disconnection: session time: 0:00:00.032 user=postgres database=postgres host=10.40.15.144 port=48294
+2025-06-24 14:01:56.352 UTC [1008] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:01:56.353 UTC [1008] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:01:56.353 UTC [1008] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:01:56.355 UTC [1008] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:01:56.389 UTC [1009] [unknown]@[unknown] LOG:  connection received: host=10.40.15.144 port=48302
+2025-06-24 14:01:56.403 UTC [1009] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 14:01:56.403 UTC [1009] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 14:01:56.435 UTC [1009] postgres@postgres LOG:  disconnection: session time: 0:00:00.045 user=postgres database=postgres host=10.40.15.144 port=48302
+2025-06-24 14:01:59.294 UTC [1010] [unknown]@[unknown] LOG:  connection received: host=10.40.15.144 port=48314
+2025-06-24 14:01:59.307 UTC [1010] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 14:01:59.307 UTC [1010] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 14:01:59.342 UTC [1010] postgres@postgres LOG:  disconnection: session time: 0:00:00.048 user=postgres database=postgres host=10.40.15.144 port=48314
+2025-06-24 14:02:06.423 UTC [1018] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:02:06.424 UTC [1018] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:02:06.424 UTC [1018] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:02:06.426 UTC [1018] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:02:16.501 UTC [1026] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:02:16.502 UTC [1026] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:02:16.502 UTC [1026] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:02:16.504 UTC [1026] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:02:22.069 UTC [19] @ LOG:  checkpoint starting: time
+2025-06-24 14:02:22.293 UTC [19] @ LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.209 s, sync=0.004 s, total=0.225 s; sync files=3, longest=0.003 s, average=0.002 s; distance=1 kB, estimate=13132 kB; lsn=0/2C45B88, redo lsn=0/2C45B30
+2025-06-24 14:02:26.574 UTC [1034] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:02:26.576 UTC [1034] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:02:26.576 UTC [1034] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:02:26.578 UTC [1034] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:02:36.647 UTC [1042] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:02:36.648 UTC [1042] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:02:36.648 UTC [1042] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:02:36.650 UTC [1042] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:02:46.723 UTC [1051] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:02:46.724 UTC [1051] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:02:46.724 UTC [1051] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:02:46.726 UTC [1051] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:02:56.802 UTC [1059] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:02:56.803 UTC [1059] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:02:56.803 UTC [1059] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:02:56.805 UTC [1059] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:03:06.873 UTC [1067] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:03:06.874 UTC [1067] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:03:06.874 UTC [1067] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:03:06.876 UTC [1067] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:03:16.949 UTC [1075] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:03:16.950 UTC [1075] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:03:16.950 UTC [1075] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:03:16.951 UTC [1075] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:03:27.022 UTC [1084] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:03:27.025 UTC [1084] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:03:27.025 UTC [1084] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:03:27.031 UTC [1084] postgres@postgres LOG:  disconnection: session time: 0:00:00.008 user=postgres database=postgres host=[local]
+2025-06-24 14:03:37.103 UTC [1092] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:03:37.104 UTC [1092] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:03:37.104 UTC [1092] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:03:37.106 UTC [1092] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:03:47.172 UTC [1100] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:03:47.173 UTC [1100] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:03:47.173 UTC [1100] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:03:47.175 UTC [1100] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:03:57.241 UTC [1108] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:03:57.242 UTC [1108] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:03:57.242 UTC [1108] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:03:57.244 UTC [1108] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:04:07.324 UTC [1116] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:04:07.325 UTC [1116] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:04:07.325 UTC [1116] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:04:07.327 UTC [1116] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:04:17.399 UTC [1125] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:04:17.400 UTC [1125] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:04:17.400 UTC [1125] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:04:17.404 UTC [1125] postgres@postgres LOG:  disconnection: session time: 0:00:00.006 user=postgres database=postgres host=[local]
+2025-06-24 14:04:27.476 UTC [1133] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:04:27.477 UTC [1133] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:04:27.477 UTC [1133] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:04:27.480 UTC [1133] postgres@postgres LOG:  disconnection: session time: 0:00:00.004 user=postgres database=postgres host=[local]
+2025-06-24 14:04:37.555 UTC [1141] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:04:37.556 UTC [1141] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:04:37.556 UTC [1141] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:04:37.558 UTC [1141] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:04:47.629 UTC [1149] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:04:47.630 UTC [1149] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:04:47.630 UTC [1149] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:04:47.632 UTC [1149] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:04:57.712 UTC [1158] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:04:57.714 UTC [1158] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:04:57.714 UTC [1158] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:04:57.715 UTC [1158] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:05:07.785 UTC [1166] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:05:07.786 UTC [1166] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:05:07.786 UTC [1166] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:05:07.788 UTC [1166] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:05:17.855 UTC [1174] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:05:17.856 UTC [1174] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:05:17.856 UTC [1174] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:05:17.858 UTC [1174] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:05:27.924 UTC [1182] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:05:27.925 UTC [1182] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:05:27.925 UTC [1182] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:05:27.927 UTC [1182] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:05:38.008 UTC [1190] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:05:38.009 UTC [1190] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:05:38.009 UTC [1190] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:05:38.011 UTC [1190] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:05:48.084 UTC [1199] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:05:48.085 UTC [1199] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:05:48.085 UTC [1199] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:05:48.087 UTC [1199] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:05:58.168 UTC [1207] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:05:58.169 UTC [1207] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:05:58.169 UTC [1207] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:05:58.171 UTC [1207] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:06:08.238 UTC [1215] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:06:08.239 UTC [1215] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:06:08.239 UTC [1215] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:06:08.240 UTC [1215] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:06:18.310 UTC [1223] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:06:18.311 UTC [1223] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:06:18.311 UTC [1223] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:06:18.314 UTC [1223] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:06:28.393 UTC [1232] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:06:28.394 UTC [1232] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:06:28.394 UTC [1232] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:06:28.396 UTC [1232] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:06:38.468 UTC [1240] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:06:38.469 UTC [1240] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:06:38.469 UTC [1240] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:06:38.471 UTC [1240] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:06:48.542 UTC [1248] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:06:48.543 UTC [1248] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:06:48.543 UTC [1248] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:06:48.545 UTC [1248] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:06:58.614 UTC [1256] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:06:58.615 UTC [1256] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:06:58.615 UTC [1256] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:06:58.617 UTC [1256] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:07:08.696 UTC [1265] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:07:08.697 UTC [1265] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:07:08.697 UTC [1265] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:07:08.699 UTC [1265] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:07:18.776 UTC [1273] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:07:18.777 UTC [1273] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:07:18.777 UTC [1273] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:07:18.779 UTC [1273] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:07:28.849 UTC [1281] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:07:28.850 UTC [1281] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:07:28.850 UTC [1281] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:07:28.852 UTC [1281] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:07:38.926 UTC [1289] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:07:38.928 UTC [1289] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:07:38.928 UTC [1289] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:07:38.930 UTC [1289] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:07:48.998 UTC [1297] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:07:48.999 UTC [1297] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:07:48.999 UTC [1297] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:07:49.001 UTC [1297] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:07:59.065 UTC [1306] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:07:59.066 UTC [1306] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:07:59.066 UTC [1306] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:07:59.068 UTC [1306] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:08:09.140 UTC [1314] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:08:09.141 UTC [1314] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:08:09.141 UTC [1314] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:08:09.143 UTC [1314] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:08:19.213 UTC [1322] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:08:19.214 UTC [1322] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:08:19.214 UTC [1322] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:08:19.216 UTC [1322] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:08:29.284 UTC [1330] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:08:29.285 UTC [1330] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:08:29.285 UTC [1330] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:08:29.288 UTC [1330] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:08:31.900 UTC [1331] [unknown]@[unknown] LOG:  connection received: host=10.40.13.88 port=35348
+2025-06-24 14:08:31.912 UTC [1331] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 14:08:31.912 UTC [1331] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 14:08:31.923 UTC [1331] postgres@postgres LOG:  disconnection: session time: 0:00:00.022 user=postgres database=postgres host=10.40.13.88 port=35348
+2025-06-24 14:08:31.979 UTC [1332] [unknown]@[unknown] LOG:  connection received: host=10.40.13.88 port=35350
+2025-06-24 14:08:31.993 UTC [1332] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 14:08:31.993 UTC [1332] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 14:08:32.014 UTC [1332] postgres@postgres LOG:  disconnection: session time: 0:00:00.034 user=postgres database=postgres host=10.40.13.88 port=35350
+2025-06-24 14:08:35.252 UTC [1333] [unknown]@[unknown] LOG:  connection received: host=10.40.13.88 port=35354
+2025-06-24 14:08:35.271 UTC [1333] postgres@postgres LOG:  connection authenticated: identity="postgres" method=scram-sha-256 (/home/postgres/pgdata/data/pg_hba.conf:128)
+2025-06-24 14:08:35.271 UTC [1333] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
+2025-06-24 14:08:35.305 UTC [1333] postgres@postgres LOG:  disconnection: session time: 0:00:00.053 user=postgres database=postgres host=10.40.13.88 port=35354
+2025-06-24 14:08:39.362 UTC [1342] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:08:39.363 UTC [1342] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:08:39.363 UTC [1342] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:08:39.365 UTC [1342] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:08:49.433 UTC [1350] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:08:49.434 UTC [1350] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:08:49.434 UTC [1350] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:08:49.436 UTC [1350] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:08:59.512 UTC [1358] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:08:59.513 UTC [1358] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:08:59.513 UTC [1358] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:08:59.515 UTC [1358] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:09:09.582 UTC [1366] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:09:09.583 UTC [1366] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:09:09.583 UTC [1366] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:09:09.585 UTC [1366] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:09:19.652 UTC [1374] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:09:19.653 UTC [1374] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:09:19.654 UTC [1374] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:09:19.655 UTC [1374] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:09:29.733 UTC [1383] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:09:29.734 UTC [1383] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:09:29.734 UTC [1383] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:09:29.735 UTC [1383] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:09:39.805 UTC [1391] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:09:39.806 UTC [1391] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:09:39.806 UTC [1391] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:09:39.808 UTC [1391] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:09:49.907 UTC [1399] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:09:49.908 UTC [1399] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:09:49.908 UTC [1399] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:09:49.909 UTC [1399] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:09:59.985 UTC [1407] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:09:59.986 UTC [1407] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:09:59.986 UTC [1407] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:09:59.988 UTC [1407] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2025-06-24 14:10:10.063 UTC [1416] [unknown]@[unknown] LOG:  connection received: host=[local]
+2025-06-24 14:10:10.065 UTC [1416] postgres@postgres LOG:  connection authenticated: user="postgres" method=trust (/home/postgres/pgdata/data/pg_hba.conf:117)
+2025-06-24 14:10:10.065 UTC [1416] postgres@postgres LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2025-06-24 14:10:10.066 UTC [1416] postgres@postgres LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
