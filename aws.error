@@ -1,0 +1,2 @@
+➜  ~ aws s3 cp s3://jupiter-assets-3/dev/geoserver-data ./geoserver_data --recursive
+download failed: s3://jupiter-assets-3/dev/geoserver-data/dtm/israel_dtm.tif to geoserver_data/dtm/israel_dtm.tif An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::774305603116:assumed-role/AWSReservedSSO_Workload-Dev-Admin-PS_1250a7ade462c978/TBrovender94@dev.sky320.com is not authorized to perform: s3:GetObject on resource: "arn:aws:s3:::jupiter-assets-3/dev/geoserver-data/dtm/israel_dtm.tif" with an explicit deny in a resource-based policy
