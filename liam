@@ -1,0 +1,56 @@
+resource "aws_launch_template" "timescale_db" {
+  image_id      = data.aws_ami.default_instance_ami.id
+  instance_type = "t3a.xlarge"
+  user_data     = filebase64("${path.module}/scripts/dev/db.userdata.sh")
+
+
+  iam_instance_profile {
+    name = awscc_iam_instance_profile.timescale_instance_profile.instance_profile_name
+  }
+
+  network_interfaces {
+    associate_public_ip_address = false
+    subnet_id                   = local.private_subnet_ids["1a"]
+    security_groups = [
+      aws_security_group.database_sg.id,
+      aws_security_group.ecs_services.id
+    ]
+  }
+
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_put_response_hop_limit = 1
+    http_tokens                 = "required"
+  }
+
+  block_device_mappings {
+    device_name = "/dev/xvda"
+    ebs {
+      volume_size           = 100
+      volume_type           = "gp3"
+      encrypted             = true
+      delete_on_termination = false
+    }
+  }
+
+  tag_specifications {
+    resource_type = "instance"
+    tags = {
+      Name = "timescale-db"
+    }
+  }
+
+  tag_specifications {
+    resource_type = "volume"
+    tags = {
+      Name = "timescale-db-volume"
+    }
+  }
+}
+
+resource "aws_instance" "timescale_db_instance" {
+  launch_template {
+    id      = aws_launch_template.timescale_db.id
+    version = "$Latest"
+  }
+}
